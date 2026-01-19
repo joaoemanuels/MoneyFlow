@@ -1,0 +1,45 @@
+.sidebar {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* container interno */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  padding: 20px;
+}
+
+/* grupos */
+.sidebar-item,
+.sidebar-config {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+/* item individual */
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.menu-item:hover {
+  background-color: rgb(236, 80, 80);
+}
+
+.menu-item.active {
+  background-color: rgb(236, 80, 80);
+}
