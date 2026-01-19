@@ -57,7 +57,39 @@
     </aside>
 
     <main>
-      <header></header>
+      <header class="dashboard-header">
+        <div class="dashboard-title">
+          <h1>Dashboard</h1>
+          <p id="dashboard-greeting">Hi ${nome}, ${periodo do dia}</p>
+        </div>
+
+        <div class="dashboard-actions">
+          <form class="dashboard-search" role="search">
+            <label for="search" class="sr-only">Buscar transações</label>
+
+            <input
+              id="search"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar transações"
+            />
+
+            <button type="submit" aria-label="Pesquisar">
+              <img src="./assets/icons/search.png" alt="" />
+            </button>
+          </form>
+
+          <div class="dashboard-icons">
+            <button class="menu-item" aria-label="calendar">
+              <img src="./assets/icons/bell.png" alt="" />
+            </button>
+
+            <button class="menu-item" aria-label="Notificações">
+              <img src="./assets/icons/user-headset.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </header>
 
       <section></section>
 

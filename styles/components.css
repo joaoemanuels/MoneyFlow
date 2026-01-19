@@ -3,6 +3,8 @@
   color: #fff;
 }
 
+
+
 /* container interno */
 .sidebar-menu {
   display: flex;
@@ -13,12 +15,34 @@
   padding: 20px;
 }
 
+.dashboard-actions {
+  gap: 50px;
+}
+
+.dashboard-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 250px;
+  padding: 0 20px;
+
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+
 /* grupos */
 .sidebar-item,
 .sidebar-config {
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 20px;
+}
+
+.dashboard-icons,
+.dashboard-actions {
+  display: flex;
 }
 
 /* item individual */
