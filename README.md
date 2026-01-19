@@ -34,7 +34,7 @@ O projeto foi estruturado para simular um ambiente real de aplicação, separand
 
 Essa abordagem facilita manutenção, testes e futuras evoluções do sistema.
 
----
+--- 
 
 ## 📁 Estrutura de Pastas
 
