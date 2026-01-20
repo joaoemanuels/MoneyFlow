@@ -1,30 +1,29 @@
-.app {
+body {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  min-height: 100vh;
+  grid-template-columns: 90px 1fr 300px;
+  height: 100vh;
 }
 
 .sidebar {
   width: 90px;
   height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
 }
 
-.main {
-  padding: var(--space-lg);
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 35px 35px 0 35px;
 }
 
-.header {
+.dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-lg);
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--space-lg);
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
 }

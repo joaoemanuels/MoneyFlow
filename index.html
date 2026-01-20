@@ -57,11 +57,65 @@
     </aside>
 
     <main>
-      <header></header>
+      <header class="dashboard-header">
+        <div class="dashboard-title">
+          <h1>Dashboard</h1>
+          <p id="dashboard-greeting">Hi ${nome}, ${periodo do dia}</p>
+        </div>
 
-      <section></section>
+        <div class="dashboard-actions">
+          <form class="dashboard-search" role="search">
+            <label for="search" class="sr-only"></label>
 
-      <section></section>
+            <input
+              id="search"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar transações"
+            />
+
+            <button type="submit" aria-label="Pesquisar">
+              <img src="./assets/icons/search.png" alt="" />
+            </button>
+          </form>
+
+          <div class="dashboard-icons">
+            <button class="menu-item" aria-label="calendar">
+              <img src="./assets/icons/calendar.png" alt="" />
+            </button>
+
+            <button class="menu-item" aria-label="Notificações">
+              <img src="./assets/icons/bell.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="dashboard-cards">
+        <div class="dashboard-card">
+          <p>R$500</p>
+          <img src="assets/icons/calendar.png" alt="" />
+          <span>Cartao de credito</span>
+        </div>
+      </section>
+
+      <section class="dashboard-history">
+        <div class="dashboard-history_title">
+          <h2>Histórico de transações</h2>
+          <span>Ultimos 2 meses</span>
+        </div>
+
+        <div class="dashboard-history_transaction"></div>
+      </section>
+
+      <section class="dashboard-balance">
+        <div class="dashboard-balance_title">
+          <h2>Resumo</h2>
+          <span>Ultimos 12 meses</span>
+        </div>
+
+        <div class="dashboard-balance_graphy"></div>
+      </section>
     </main>
 
     <aside></aside>

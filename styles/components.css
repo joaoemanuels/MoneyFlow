@@ -13,12 +13,58 @@
   padding: 20px;
 }
 
+.dashboard-actions {
+  display: flex;
+  gap: 50px;
+}
+
+.dashboard-search {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+
+  width: 270px;
+  padding: 0 20px;
+
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.dashboard-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 25px;
+  height: 140px;
+}
+
+.dashboard-card p {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.dashboard-history_transaction {
+  height: 150px;
+}
+
+.dashboard-balance_graphy {
+  height: 150px;
+}
+
 /* grupos */
 .sidebar-item,
 .sidebar-config {
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 20px;
+}
+
+.dashboard-icons {
+  display: flex;
 }
 
 /* item individual */
