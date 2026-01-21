@@ -3,7 +3,7 @@
   color: #fff;
 }
 
-/* container interno */
+
 .sidebar-menu {
   display: flex;
   flex-direction: column;
@@ -13,10 +13,44 @@
   padding: 20px;
 }
 
+
+.sidebar-item,
+.sidebar-config {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: rgb(236, 80, 80);
+}
+
+
 .dashboard-actions {
   display: flex;
   gap: 50px;
 }
+
+.dashboard-icons {
+  display: flex;
+}
+
 
 .dashboard-search {
   display: flex;
@@ -31,21 +65,27 @@
   border-radius: 30px;
 }
 
+
 .dashboard-card {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
-  background-color: white;
+
+  background-color: #fff;
   padding: 16px;
   border-radius: 25px;
-  height: 140px;
+
+  height: 150px;
+  width: 100%;
+  text-align: center;
 }
 
 .dashboard-card p {
   font-size: 1.6rem;
   font-weight: bold;
 }
+
 
 .dashboard-history_transaction {
   height: 150px;
@@ -55,37 +95,72 @@
   height: 150px;
 }
 
-/* grupos */
-.sidebar-item,
-.sidebar-config {
+
+.sidebar-right_title {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 0 10px 0;
+}
+
+.account-card {
+  padding: 16px;
+  background-color: aquamarine;
+  border-radius: 16px;
+}
+
+
+.account-card__number {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+
+.account-card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+
+.account-card__holder {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 4px;
 }
 
-.dashboard-icons {
-  display: flex;
-}
 
-/* item individual */
-.menu-item {
+.account-card__meta {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  background: transparent;
-  border: none;
-  cursor: pointer;
-
-  transition: background 0.2s ease;
-  padding: 10px;
-  border-radius: 10px;
 }
 
-.menu-item:hover {
-  background-color: rgb(236, 80, 80);
+.account-card__meta__section {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  text-align: center;
 }
 
-.menu-item.active {
-  background-color: rgb(236, 80, 80);
+
+.account-card__expiry,
+.account-card__cvv {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.account-card__expiry p:first-child,
+.account-card__cvv p:first-child {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.account-card__expiry p:last-child,
+.account-card__cvv p:last-child {
+  font-weight: 600;
 }

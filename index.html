@@ -23,9 +23,14 @@
         </div>
 
         <div class="sidebar-item">
-          <button class="menu-item" aria-label="Dashboard" aria-current="page">
-            <img src="./assets/icons/home.png" alt="" />
-          </button>
+          <a href="/">
+            <button
+              class="menu-item"
+              aria-label="Dashboard"
+              aria-current="page"
+            >
+              <img src="./assets/icons/home.png" alt="" /></button
+          ></a>
 
           <button class="menu-item" aria-label="Histórico">
             <img src="./assets/icons/time-past.png" alt="" />
@@ -59,8 +64,8 @@
     <main>
       <header class="dashboard-header">
         <div class="dashboard-title">
-          <h1>Dashboard</h1>
-          <p id="dashboard-greeting">Hi ${nome}, ${periodo do dia}</p>
+          <h1 class="">Dashboard</h1>
+          <p id="dashboard-greeting"></p>
         </div>
 
         <div class="dashboard-actions">
@@ -92,10 +97,28 @@
       </header>
 
       <section class="dashboard-cards">
-        <div class="dashboard-card">
-          <p>R$500</p>
+        <div class="dashboard-card card-saldo">
+          <p>R$</p>
           <img src="assets/icons/calendar.png" alt="" />
-          <span>Cartao de credito</span>
+          <span>Valor disponível</span>
+        </div>
+
+        <div class="dashboard-card card-compras">
+          <p>R$</p>
+          <img src="assets/icons/calendar.png" alt="" />
+          <span>Cartao de credito e compras</span>
+        </div>
+
+        <div class="dashboard-card card-investimento">
+          <p>R$</p>
+          <img src="assets/icons/calendar.png" alt="" />
+          <span>Investimentos</span>
+        </div>
+
+        <div class="dashboard-card card-hobbies">
+          <p>R$</p>
+          <img src="assets/icons/calendar.png" alt="" />
+          <span>Educação e Hobbies</span>
         </div>
       </section>
 
@@ -118,7 +141,40 @@
       </section>
     </main>
 
-    <aside></aside>
+    <aside class="sidebar-right">
+      <div class="sidebar-right_title">
+        <img src="./assets/icons/bell.png" alt="" />
+        <h1>Joao</h1>
+      </div>
+
+      <section class="account-card">
+        <p class="account-card__number">**** **** **** 1234</p>
+
+        <div class="account-card__content">
+          <div class="account-card__holder">
+            <span>Nome</span>
+            <span>Número</span>
+          </div>
+          <img src="assets/icons/bell.png" alt="" />
+        </div>
+
+        <div class="account-card__meta">
+          <p>Credito</p>
+
+          <div class="account-card__meta__section">
+            <div class="account-card__expiry">
+              <p>Exp</p>
+              <p>01/22</p>
+            </div>
+
+            <div class="account-card__cvv">
+              <p>CVV</p>
+              <p>122</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
 
     <script type="module" src="./scripts/app.js"></script>
   </body>

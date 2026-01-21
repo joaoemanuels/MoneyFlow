@@ -25,5 +25,12 @@ main {
 .dashboard-cards {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 0;
+  gap: 20px;
+}
+
+.sidebar-right {
+  padding: 35px 15px 0 15px;
+  background-color: antiquewhite;
 }

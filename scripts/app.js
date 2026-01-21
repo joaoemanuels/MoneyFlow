@@ -1,18 +1,19 @@
-i// Services
-import { loadTransactions } from "./services/transactionsService.js";
+//import { loadTransactions } from "./services/transactionsService.js";
 
-// UI
-import { renderTable } from "./ui/table.js";
-import { renderSummary } from "./ui/summary.js";
-import { initForm } from "./ui/form.js";
+//import { renderTable } from "./ui/table.js";
+//import { renderSummary } from "./ui/summary.js";
+//import { initForm } from "./ui/form.js";
 import { initModal } from "./ui/modal.js";
+//import { state } from "../mock/state.js";
 
 function initApp() {
-  loadTransactions();
-  renderSummary();
-  renderTable();
-  initForm();
+  //loadTransactions();
+  //renderSummary();
+  //renderTable();
+  //initForm();
+
   initModal();
+
 }
 
 initApp();
