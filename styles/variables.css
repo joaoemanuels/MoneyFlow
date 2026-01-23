@@ -1,31 +1,60 @@
 :root {
-  /* Colors */
-  --color-primary: #6c5ce7;
-  --color-secondary: #a29bfe;
-  --color-success: #00b894;
-  --color-danger: #d63031;
-  --color-bg: #f5f6fa;
-  --color-text: #2d3436;
+  /* ===== Colors ===== */
+  --color-primary: #1E3A5F;      /* Azul petróleo, ação principal */
+  --color-primary-light: #254B78; /* Hover/ativo do primary */
+  --color-secondary: #7C3AED;    /* Roxo, investimentos ou secundário */
+  --color-secondary-light: #9D6DF2;
 
-  /* Typography */
+  --color-success: #16A34A;      /* Verde, entradas */
+  --color-success-light: #38B768; /* Hover/ativo */
+
+  --color-danger: #DC2626;       /* Vermelho, saídas */
+  --color-danger-light: #E74C4C; /* Hover/ativo */
+
+  --color-bg: #000;           /* Fundo geral do app */
+  --color-card-bg: #1A1B20;      /* Fundo dos cards */
+  --color-sidebar-bg: #1A1B20;   /* Fundo da sidebar */
+  --color-text: #0F172A;         /* Texto principal */
+  --color-text-secondary: #64748B; /* Texto secundário/labels */
+  --color-text-muted: #94A3B8;     /* Texto desativado */
+
+  /* ===== Typography ===== */
   --font-family-base: 'Inter', system-ui, sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.75rem;
 
-  /* Spacing */
+  /* ===== Spacing ===== */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
 
-  /* Radius */
+  /* ===== Radius ===== */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
 
-  /* Shadow */
+  /* ===== Shadow ===== */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* ===== Buttons ===== */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-light);
+  --btn-primary-text: #FFFFFF;
+
+  --btn-secondary-bg: var(--color-secondary);
+  --btn-secondary-hover: var(--color-secondary-light);
+  --btn-secondary-text: #FFFFFF;
+
+  --btn-success-bg: var(--color-success);
+  --btn-success-hover: var(--color-success-light);
+  --btn-success-text: #FFFFFF;
+
+  --btn-danger-bg: var(--color-danger);
+  --btn-danger-hover: var(--color-danger-light);
+  --btn-danger-text: #FFFFFF;
 }

@@ -1,4 +1,4 @@
-export const state = {
+export const transactions = {
   user: {
     name: "João",
   },
@@ -107,9 +107,9 @@ export const state = {
     {
       id: 13,
       title: "Rendimento Tesouro",
-      type: "income",
+      type: "expense",
       category: "Investimentos",
-      amount: 15,
+      amount: 115,
       date: "2026-01-31",
     },
 

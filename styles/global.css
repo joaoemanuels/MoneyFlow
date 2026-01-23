@@ -4,6 +4,20 @@ body {
   color: var(--color-text);
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text-secondary);
+  font-size: 1.6rem;
+}
+
+p,
+span {
+  color: var(--color-text-muted);
+  font-size: .8rem;
+}
+
 img {
   max-width: 100%;
   display: block;

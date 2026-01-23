@@ -93,24 +93,24 @@
 
       <section class="dashboard-cards">
         <div class="dashboard-card">
-          <p>R$500</p>
+          <p class="dashboard-card__value" id="total-balance"></p>
           <img src="assets/icons/calendar.png" alt="" />
-          <span>Cartao de credito</span>
+          <span>Saldo disponível</span>
         </div>
         <div class="dashboard-card">
-          <p>R$500</p>
+          <p class="dashboard-card__value" id="total-income"></p>
           <img src="assets/icons/calendar.png" alt="" />
-          <span>Cartao de credito</span>
+          <span>Total de Entradas</span>
         </div>
         <div class="dashboard-card">
-          <p>R$500</p>
+          <p class="dashboard-card__value" id="total-invested"></p>
           <img src="assets/icons/calendar.png" alt="" />
-          <span>Cartao de credito</span>
+          <span>Valor investido</span>
         </div>
         <div class="dashboard-card">
-          <p>R$500</p>
+          <p class="dashboard-card__value" id="total-expense"></p>
           <img src="assets/icons/calendar.png" alt="" />
-          <span>Cartao de credito</span>
+          <span>Gastos totais</span>
         </div>
       </section>
 
@@ -167,21 +167,73 @@
         </div>
       </section>
 
-      <section class="upcoming-pay">
-        <h1>Próximos</h1>
-        <span>${proximo mes}</span>
+      <section class="upcoming">
+        <div class="upcoming-pay">
+          <h1>Próximos</h1>
+          <span>${proximo mes}</span>
 
-        <div class="upcoming-pay__card">
-          <ul>
-            <li class="upcoming-pay__card__list">
-              <img src="./assets/icons/bell.png" alt="" />
-              <div class="upcoming-pay__card_text">
-                <p>Limpeza da casa</p>
-                <p>12Hrs - pendente</p>
-              </div>
-              <p>R$500</p>
-            </li>
-          </ul>
+          <div class="upcoming-pay__card">
+            <ul>
+              <li class="upcoming-pay__card__list">
+                <img src="./assets/icons/bell.png" alt="" />
+                <div class="upcoming-pay__card_text">
+                  <p>Limpeza da casa</p>
+                  <p>12Hrs - pendente</p>
+                </div>
+                <p>R$500</p>
+              </li>
+              <li class="upcoming-pay__card__list">
+                <img src="./assets/icons/bell.png" alt="" />
+                <div class="upcoming-pay__card_text">
+                  <p>Limpeza da casa</p>
+                  <p>12Hrs - pendente</p>
+                </div>
+                <p>R$500</p>
+              </li>
+              <li class="upcoming-pay__card__list">
+                <img src="./assets/icons/bell.png" alt="" />
+                <div class="upcoming-pay__card_text">
+                  <p>Limpeza da casa</p>
+                  <p>12Hrs - pendente</p>
+                </div>
+                <p>R$500</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="upcoming-pay">
+          <h1>Próximos</h1>
+          <span>${proximo mes}</span>
+
+          <div class="upcoming-pay__card">
+            <ul>
+              <li class="upcoming-pay__card__list">
+                <img src="./assets/icons/bell.png" alt="" />
+                <div class="upcoming-pay__card_text">
+                  <p>Limpeza da casa</p>
+                  <p>12Hrs - pendente</p>
+                </div>
+                <p>R$500</p>
+              </li>
+              <li class="upcoming-pay__card__list">
+                <img src="./assets/icons/bell.png" alt="" />
+                <div class="upcoming-pay__card_text">
+                  <p>Limpeza da casa</p>
+                  <p>12Hrs - pendente</p>
+                </div>
+                <p>R$500</p>
+              </li>
+              <li class="upcoming-pay__card__list">
+                <img src="./assets/icons/bell.png" alt="" />
+                <div class="upcoming-pay__card_text">
+                  <p>Limpeza da casa</p>
+                  <p>12Hrs - pendente</p>
+                </div>
+                <p>R$500</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </aside>
