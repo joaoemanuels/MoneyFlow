@@ -60,7 +60,7 @@
       <header class="dashboard-header">
         <div class="dashboard-title">
           <h1>Dashboard</h1>
-          <p id="dashboard-greeting">Hi ${nome}, ${periodo do dia}</p>
+          <p id="dashboard-greeting"></p>
         </div>
 
         <div class="dashboard-actions">
@@ -94,22 +94,22 @@
       <section class="dashboard-cards">
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-balance"></p>
-          <img src="assets/icons/calendar.png" alt="" />
+          <img src="assets/icons/wallet.png" alt="" />
           <span>Saldo disponível</span>
         </div>
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-income"></p>
-          <img src="assets/icons/calendar.png" alt="" />
+          <img src="assets/icons/passive-income.png" alt="" />
           <span>Total de Entradas</span>
         </div>
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-invested"></p>
-          <img src="assets/icons/calendar.png" alt="" />
+          <img src="assets/icons/growth-chart-invest.png" alt="" />
           <span>Valor investido</span>
         </div>
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-expense"></p>
-          <img src="assets/icons/calendar.png" alt="" />
+          <img src="assets/icons/expense.png" alt="" />
           <span>Gastos totais</span>
         </div>
       </section>
@@ -120,7 +120,62 @@
           <span>Ultimos 2 meses</span>
         </div>
 
-        <div class="dashboard-history_transaction"></div>
+        <div class="transactions-history">
+          <ul class="transactions-list">
+            <li class="transaction-item expense">
+              <img
+                class="transaction-icon"
+                src="./assets/icons/bell.png"
+                alt="Notificação"
+              />
+
+              <span class="transaction-title">Mercado</span>
+              <span class="transaction-product">Cartão</span>
+              <span class="transaction-date">12/01/2026</span>
+              <span class="transaction-amount">R$ 150,00</span>
+              <span class="transaction-status">Concluído</span>
+            </li>
+            <li class="transaction-item expense">
+              <img
+                class="transaction-icon"
+                src="./assets/icons/bell.png"
+                alt="Notificação"
+              />
+
+              <span class="transaction-title">Mercado</span>
+              <span class="transaction-product">Cartão</span>
+              <span class="transaction-date">12/01/2026</span>
+              <span class="transaction-amount">R$ 150,00</span>
+              <span class="transaction-status">Concluído</span>
+            </li>
+            <li class="transaction-item expense">
+              <img
+                class="transaction-icon"
+                src="./assets/icons/bell.png"
+                alt="Notificação"
+              />
+
+              <span class="transaction-title">Mercado</span>
+              <span class="transaction-product">Cartão</span>
+              <span class="transaction-date">12/01/2026</span>
+              <span class="transaction-amount">R$ 150,00</span>
+              <span class="transaction-status">Concluído</span>
+            </li>
+            <li class="transaction-item expense">
+              <img
+                class="transaction-icon"
+                src="./assets/icons/bell.png"
+                alt="Notificação"
+              />
+
+              <span class="transaction-title">Mercado</span>
+              <span class="transaction-product">Cartão</span>
+              <span class="transaction-date">12/01/2026</span>
+              <span class="transaction-amount">R$ 150,00</span>
+              <span class="transaction-status">Concluído</span>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="dashboard-balance">
@@ -129,14 +184,16 @@
           <span>Ultimos 12 meses</span>
         </div>
 
-        <div class="dashboard-balance_graphy"></div>
+        <div class="dashboard-balance_graphy">
+          <img src="https://www.vivaolinux.com.br/imagens/artigos/comunidade/fig_tab2.jpg" alt="">
+        </div>
       </section>
     </main>
 
     <aside class="sidebar-right">
       <div class="sidebar-right_title">
-        <img src="./assets/icons/bell.png" alt="" />
-        <h1>Joao</h1>
+        <img src="./assets/icons/circle-user.png" alt="" />
+        <h1 id="siderbar-greeting"></h1>
       </div>
 
       <section class="account-card">
@@ -145,7 +202,7 @@
         <div class="account-card__content">
           <div class="account-card__holder">
             <span>Nome</span>
-            <span>Número</span>
+            <span>VISA</span>
           </div>
           <img src="assets/icons/bell.png" alt="" />
         </div>
@@ -155,13 +212,13 @@
 
           <div class="account-card__meta__section">
             <div class="account-card__expiry">
-              <p>Exp</p>
+              <p>Validade</p>
               <p>01/22</p>
             </div>
 
             <div class="account-card__cvv">
               <p>CVV</p>
-              <p>122</p>
+              <p>***</p>
             </div>
           </div>
         </div>
@@ -169,27 +226,11 @@
 
       <section class="upcoming">
         <div class="upcoming-pay">
-          <h1>Próximos</h1>
+          <h1>Programados</h1>
           <span>${proximo mes}</span>
 
           <div class="upcoming-pay__card">
             <ul>
-              <li class="upcoming-pay__card__list">
-                <img src="./assets/icons/bell.png" alt="" />
-                <div class="upcoming-pay__card_text">
-                  <p>Limpeza da casa</p>
-                  <p>12Hrs - pendente</p>
-                </div>
-                <p>R$500</p>
-              </li>
-              <li class="upcoming-pay__card__list">
-                <img src="./assets/icons/bell.png" alt="" />
-                <div class="upcoming-pay__card_text">
-                  <p>Limpeza da casa</p>
-                  <p>12Hrs - pendente</p>
-                </div>
-                <p>R$500</p>
-              </li>
               <li class="upcoming-pay__card__list">
                 <img src="./assets/icons/bell.png" alt="" />
                 <div class="upcoming-pay__card_text">
@@ -203,7 +244,7 @@
         </div>
 
         <div class="upcoming-pay">
-          <h1>Próximos</h1>
+          <h1>Recentes</h1>
           <span>${proximo mes}</span>
 
           <div class="upcoming-pay__card">
@@ -212,23 +253,7 @@
                 <img src="./assets/icons/bell.png" alt="" />
                 <div class="upcoming-pay__card_text">
                   <p>Limpeza da casa</p>
-                  <p>12Hrs - pendente</p>
-                </div>
-                <p>R$500</p>
-              </li>
-              <li class="upcoming-pay__card__list">
-                <img src="./assets/icons/bell.png" alt="" />
-                <div class="upcoming-pay__card_text">
-                  <p>Limpeza da casa</p>
-                  <p>12Hrs - pendente</p>
-                </div>
-                <p>R$500</p>
-              </li>
-              <li class="upcoming-pay__card__list">
-                <img src="./assets/icons/bell.png" alt="" />
-                <div class="upcoming-pay__card_text">
-                  <p>Limpeza da casa</p>
-                  <p>12Hrs - pendente</p>
+                  <p>12Hrs - atrasado</p>
                 </div>
                 <p>R$500</p>
               </li>

@@ -5,6 +5,7 @@ import {
 } from "../services/income.js";
 
 import "../ui/cards.js";
+import "../ui/modal.js";
 
 export function renderSummary() {
   const totalIncome = getTotalIncome();
