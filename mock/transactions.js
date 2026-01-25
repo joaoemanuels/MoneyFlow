@@ -1,4 +1,4 @@
-export const transactions = {
+export const state = {
   user: {
     name: "João",
   },

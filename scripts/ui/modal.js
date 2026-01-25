@@ -1,4 +1,4 @@
-import { transactions } from "../../mock/transactions.js";
+import { state } from "../../mock/transactions.js";
 
 export function saudacaoPorPeriodo() {
   const hora = new Date().getHours();
@@ -12,7 +12,7 @@ export function saudacaoPorPeriodo() {
   }
 }
 
-const nome = transactions.user.name;
+const nome = state.user.name;
 const elemento = document.getElementById("dashboard-greeting");
 elemento.textContent = `Olá ${nome}, ${saudacaoPorPeriodo()}!`;
 

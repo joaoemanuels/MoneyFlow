@@ -1,7 +1,7 @@
-import { transactions } from "../../mock/transactions.js";
+import { state } from "../../mock/transactions.js";
 
 export function getTotalIncome() {
-  const transacoes = transactions.transactions;
+  const transacoes = state.transactions;
 
   const transacoesIncome = transacoes.filter((transacao) => {
     return transacao.type === "income";
@@ -16,7 +16,7 @@ export function getTotalIncome() {
 }
 
 export function getTotalExpense() {
-  const transacoes = transactions.transactions;
+  const transacoes = state.transactions;
 
   const transacoesExpense = transacoes.filter((transacao) => {
     return transacao.type === "expense";
@@ -31,7 +31,7 @@ export function getTotalExpense() {
 }
 
 export function getExpenseByCategory() {
-  const transacoes = transactions.transactions;
+  const transacoes = state.transactions;
 
   const transacoesCategory = transacoes.filter((transacao) => {
     return transacao.type === "expense";

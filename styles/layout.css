@@ -30,9 +30,16 @@ main {
   gap: 15px;
 }
 
-.dashboard-history, .dashboard-balance {
+.dashboard-history,
+.dashboard-balance {
   height: 180px;
   margin-bottom: 25px;
+}
+
+.dashboard-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .sidebar-right {
