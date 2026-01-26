@@ -11,9 +11,10 @@ body {
 
 main {
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: 5px;
-  padding: 35px 35px 0 35px;
+  padding: 10px 35px 0 35px;
 }
 
 .dashboard-header {
@@ -30,16 +31,19 @@ main {
   gap: 15px;
 }
 
-.dashboard-history,
+.dashboard-history {
+  height: 200px;
+  margin-bottom: 5px;
+}
+
 .dashboard-balance {
-  height: 180px;
-  margin-bottom: 25px;
+  height: 200px;
 }
 
 .dashboard-history {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .sidebar-right {

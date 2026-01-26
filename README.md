@@ -42,7 +42,7 @@ Essa abordagem facilita manutenção, testes e futuras evoluções do sistema.
 moneyflow/
 │
 ├── index.html
-├── README.md
+│
 │
 ├── assets/
 │   ├── icons/
@@ -63,6 +63,8 @@ moneyflow/
 │   │   └── storage.js
 │   │
 │   ├── services/
+│   │   └── chartData.js
+│   │   └── income.js
 │   │   └── transactionsService.js
 │   │
 │   ├── utils/
@@ -71,13 +73,15 @@ moneyflow/
 │   │   └── generateId.js
 │   │
 │   └── ui/
+│       ├── aside.js
+│       ├── cards.js
+│       ├── form.js
 │       ├── modal.js
-│       ├── table.js
+│       ├── renderCharts.js
 │       ├── summary.js
-│       └── form.js
+│       └── table.js
 │
-└── mock/
-    └── transactions.json
+└── README.md
 ```
 
 ---

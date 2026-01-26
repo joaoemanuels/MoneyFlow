@@ -1,22 +1,35 @@
 :root {
   /* ===== Colors ===== */
-  --color-primary: #1E3A5F;      /* Azul petróleo, ação principal */
-  --color-primary-light: #254B78; /* Hover/ativo do primary */
-  --color-secondary: #7C3AED;    /* Roxo, investimentos ou secundário */
+  --color-primary: #1E3A5F;
+  /* Azul petróleo, ação principal */
+  --color-primary-light: #254B78;
+  /* Hover/ativo do primary */
+  --color-secondary: #7C3AED;
+  /* Roxo, investimentos ou secundário */
   --color-secondary-light: #9D6DF2;
 
-  --color-success: #16A34A;      /* Verde, entradas */
-  --color-success-light: #38B768; /* Hover/ativo */
+  --color-success: #16A34A;
+  /* Verde, entradas */
+  --color-success-light: #38B768;
+  /* Hover/ativo */
 
-  --color-danger: #DC2626;       /* Vermelho, saídas */
-  --color-danger-light: #E74C4C; /* Hover/ativo */
+  --color-danger: #DC2626;
+  /* Vermelho, saídas */
+  --color-danger-light: #E74C4C;
+  /* Hover/ativo */
 
-  --color-bg: #000;           /* Fundo geral do app */
-  --color-card-bg: #1A1B20;      /* Fundo dos cards */
-  --color-sidebar-bg: #1A1B20;   /* Fundo da sidebar */
-  --color-text: #0F172A;         /* Texto principal */
-  --color-text-secondary: #64748B; /* Texto secundário/labels */
-  --color-text-muted: #94A3B8;     /* Texto desativado */
+  --color-bg: #000;
+  /* Fundo geral do app */
+  --color-card-bg: #1A1B20;
+  /* Fundo dos cards */
+  --color-sidebar-bg: #1A1B20;
+  /* Fundo da sidebar */
+  --color-text: #0F172A;
+  /* Texto principal */
+  --color-text-secondary: #64748B;
+  /* Texto secundário/labels */
+  --color-text-muted: #94A3B8;
+  /* Texto desativado */
 
   /* ===== Typography ===== */
   --font-family-base: 'Inter', system-ui, sans-serif;

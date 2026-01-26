@@ -6,6 +6,7 @@ import {
 
 import "../ui/cards.js";
 import "../ui/modal.js";
+import "../services/chartData.js";
 import { renderTransactions } from "../ui/table.js";
 
 export function renderSummary() {

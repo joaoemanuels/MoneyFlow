@@ -42,6 +42,6 @@ export function getExpenseByCategory() {
 
     return acc;
   }, {});
-  
+
   return totalExpenseCategory;
 }
