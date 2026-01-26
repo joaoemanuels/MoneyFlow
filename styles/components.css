@@ -41,18 +41,83 @@
   background-color: rgb(236, 80, 80);
 }
 
+/* ======================================================
+   MODAL
+====================================================== */
 .modal {
+  /* Posicionamento */
   position: absolute;
   bottom: 0;
   margin-left: 80px;
-  padding: 20px;
+
+  /* Tamanho */
   width: 350px;
   height: 300px;
-  background-color: red;
-  border-radius: 20px;
-  background: #004cce;
+  padding: 20px;
 
+  /* Aparência */
+  background: #004cce;
+  border-radius: 20px;
 }
+
+.modal-content {
+  /* Display e layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.modal-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content span {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close {
+  /* Display e alinhamento */
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 10px;
+  
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: rgb(22, 224, 180);
+}
+
+.modal-item {
+  /* Display e alinhamento */
+  display: flex;
+  align-items: center;
+
+  /* Tamanho */
+  width: fit-content;
+  padding: 10px;
+
+  /* Aparência */
+  border-radius: 10px;
+  cursor: pointer;
+
+  /* Transições / efeitos */
+  transition: background 0.2s ease;
+}
+
+.modal-item:hover {
+  /* Aparência */
+  background-color: rgb(15, 8, 8);
+}
+
 
 
 /* ======================================================

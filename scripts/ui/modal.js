@@ -1,20 +1,62 @@
-import { state } from "../../mock/transactions.js";
+export function hiddenModal() {
+  const btnGraphy = document.getElementById("btn-modal-graphy");
+  const modalGraphy = document.getElementById("modal-graphy");
 
-export function saudacaoPorPeriodo() {
-  const hora = new Date().getHours();
+  const btnCard = document.getElementById("btn-modal-card");
+  const modalCard = document.getElementById("modal-card");
 
-  if (hora >= 5 && hora < 12) {
-    return "Bom dia";
-  } else if (hora >= 12 && hora < 18) {
-    return "Boa tarde";
-  } else {
-    return "Boa noite";
+  const btnTrophy = document.getElementById("btn-modal-trophy");
+  const modalTrophy = document.getElementById("modal-trophy");
+
+  const btnConfig = document.getElementById("btn-modal-config");
+  const modalConfig = document.getElementById("modal-config");
+
+  const btnSuporte = document.getElementById("btn-modal-suporte");
+  const modalSuporte = document.getElementById("modal-suporte");
+
+  const modais = [
+    modalGraphy,
+    modalCard,
+    modalTrophy,
+    modalConfig,
+    modalSuporte,
+  ];
+
+  function toggleModal(modal) {
+    const isOpen = !modal.classList.contains("hidden");
+
+    modais.forEach((m) => m.classList.add("hidden"));
+
+    if (!isOpen) {
+      modal.classList.remove("hidden");
+    }
   }
+
+  btnGraphy.addEventListener("click", function () {
+    toggleModal(modalGraphy);
+  });
+
+  btnCard.addEventListener("click", function () {
+    toggleModal(modalCard);
+  });
+
+  btnTrophy.addEventListener("click", function () {
+    toggleModal(modalTrophy);
+  });
+
+  btnConfig.addEventListener("click", function () {
+    toggleModal(modalConfig);
+  });
+
+  btnSuporte.addEventListener("click", function () {
+    toggleModal(modalSuporte);
+  });
+
+  const closeBtns = document.querySelectorAll(".modal-close");
+  closeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modal = btn.closest(".modal");
+      if (modal) modal.classList.add("hidden");
+    });
+  });
 }
-
-const nome = state.user.name;
-const elemento = document.getElementById("dashboard-greeting");
-elemento.textContent = `Olá ${nome}, ${saudacaoPorPeriodo()}!`;
-
-const elementoSideBar = document.getElementById("siderbar-greeting");
-elementoSideBar.textContent = `${nome}`;

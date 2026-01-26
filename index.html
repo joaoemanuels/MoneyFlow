@@ -31,25 +31,37 @@
             </button>
           </a>
 
-          <button class="menu-item" aria-label="Relatórios">
+          <button
+            id="btn-modal-graphy"
+            class="menu-item"
+            aria-label="Relatórios"
+          >
             <img src="./assets/icons/chart-line-up.png" alt="" />
           </button>
 
-          <button class="menu-item" aria-label="Cartões">
+          <button id="btn-modal-card" class="menu-item" aria-label="Cartões">
             <img src="./assets/icons/credit-card.png" alt="" />
           </button>
 
-          <button class="menu-item" aria-label="Conquistas">
+          <button
+            id="btn-modal-trophy"
+            class="menu-item"
+            aria-label="Conquistas"
+          >
             <img src="./assets/icons/trophy-star.png" alt="" />
           </button>
         </div>
 
         <div class="sidebar-config">
-          <button class="menu-item" aria-label="Suporte">
+          <button id="btn-modal-suporte" class="menu-item" aria-label="Suporte">
             <img src="./assets/icons/user-headset.png" alt="" />
           </button>
 
-          <button class="menu-item" aria-label="Configurações">
+          <button
+            id="btn-modal-config"
+            class="menu-item"
+            aria-label="Configurações"
+          >
             <img src="./assets/icons/settings.png" alt="" />
           </button>
         </div>
@@ -213,11 +225,92 @@
     </aside>
 
     <!-- Modais -->
-    <div id="modal-config" class="modal">
-      <div class="modal-content">
-        <button id="closeModalBtn" class="modal-close">X</button>
-        <h2>Configurações</h2>
-        <p>Opções das configs</p>
+    <div>
+      <div id="modal-graphy" class="modal hidden">
+        <div class="modal-content">
+          <button id="closeModalBtn" class="modal-close">X</button>
+          <h2>Evolução</h2>
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Modo Dark</p>
+          </button>
+
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Fazer Logout</p>
+          </button>
+          <span>Versão 1.0</span>
+        </div>
+      </div>
+
+      <div id="modal-card" class="modal hidden">
+        <div class="modal-content">
+          <button id="closeModalBtn" class="modal-close">X</button>
+          <h2>Cartões</h2>
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Modo Dark</p>
+          </button>
+
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Fazer Logout</p>
+          </button>
+          <span>Versão 1.0</span>
+        </div>
+      </div>
+
+      <div id="modal-trophy" class="modal hidden">
+        <div class="modal-content">
+          <button id="closeModalBtn" class="modal-close">X</button>
+          <h2>Trofeis</h2>
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Modo Dark</p>
+          </button>
+
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Fazer Logout</p>
+          </button>
+          <span>Versão 1.0</span>
+        </div>
+      </div>
+
+      <div id="modal-suporte" class="modal hidden">
+        <div class="modal-content">
+          <button id="closeModalBtn" class="modal-close">X</button>
+          <h2>Suporte</h2>
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Modo Dark</p>
+          </button>
+
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Fazer Logout</p>
+          </button>
+          <span>Versão 1.0</span>
+        </div>
+      </div>
+
+      <div id="modal-config" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-content-header">
+            <h2>Configurações</h2>
+            <button id="closeModalBtn" class="modal-close">X</button>
+          </div>
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Modo Dark</p>
+          </button>
+
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Fazer Logout</p>
+          </button>
+          <span>Versão 1.0</span>
+        </div>
       </div>
     </div>
 
