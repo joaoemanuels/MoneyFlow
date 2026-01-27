@@ -1,62 +1,24 @@
-body {
-  display: grid;
-  grid-template-columns: 90px 1fr 330px;
-  height: 100vh;
-}
 
-.sidebar {
-  width: 90px;
-  height: 100vh;
-}
 
-main {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px 35px 0 35px;
-}
+/*
+  1. Posicionamento
+  2. Display / Layout
+  3. Dimensões
+  4. Box Model
+  5. Aparência
+  6. Tipografia
+  7. Interação
+  8. Efeitos
+  9. Outros
+ */
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dashboard-cards {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 0;
-  gap: 15px;
-}
-
-.dashboard-history {
-  height: 200px;
-  margin-bottom: 5px;
-}
-
-.dashboard-balance {
-  height: 200px;
-}
-
-.dashboard-history {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sidebar-right {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 45px 35px 30px 35px;
-}
-
-.upcoming {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 100%;
-  justify-content: space-evenly;
-}
+ 
+/*
+styles/
+│
+├── base.css         reset, variáveis, tipografia 
+├── layout.css       grid, estrutura, posicionamento 
+├── components.css   cards, botões, modais, listas 
+├── pages.css        ajustes específicos de páginas 
+└── animations.css   transições e animações 
+*/

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/layout.css" />
     <link rel="stylesheet" href="./styles/components.css" />
     <link rel="icon" href="./assets/icons/Logotipo.png" type="image/png" />
     <title>MoneyFlow</title>
@@ -134,7 +133,6 @@
 
         <div class="transactions-history">
           <p id="empty-message">Nenhuma transação</p>
-
           <ul class="transactions-list"></ul>
         </div>
       </section>
@@ -184,52 +182,16 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="upcoming">
-        <div class="upcoming-pay">
-          <h1>Programados</h1>
-          <span>${proximo mes}</span>
-
-          <div class="upcoming-pay__card">
-            <ul>
-              <li class="upcoming-pay__card__list">
-                <img src="./assets/icons/bell.png" alt="" />
-                <div class="upcoming-pay__card_text">
-                  <p>Limpeza da casa</p>
-                  <p>12Hrs - pendente</p>
-                </div>
-                <p>R$500</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="upcoming-pay">
-          <h1>Recentes</h1>
-          <span>${proximo mes}</span>
-
-          <div class="upcoming-pay__card">
-            <ul>
-              <li class="upcoming-pay__card__list">
-                <img src="./assets/icons/bell.png" alt="" />
-                <div class="upcoming-pay__card_text">
-                  <p>Limpeza da casa</p>
-                  <p>12Hrs - atrasado</p>
-                </div>
-                <p>R$500</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>-->
     </aside>
 
     <!-- Modais -->
     <div>
       <div id="modal-graphy" class="modal hidden">
         <div class="modal-content">
-          <button id="closeModalBtn" class="modal-close">X</button>
-          <h2>Evolução</h2>
+          <div class="modal-content-header">
+            <h2>Evolução</h2>
+            <button id="closeModalBtn" class="modal-close">X</button>
+          </div>
           <button class="modal-item">
             <img src="./assets/icons/settings.png" alt="" />
             <p>Modo Dark</p>
@@ -245,8 +207,10 @@
 
       <div id="modal-card" class="modal hidden">
         <div class="modal-content">
-          <button id="closeModalBtn" class="modal-close">X</button>
-          <h2>Cartões</h2>
+          <div class="modal-content-header">
+            <h2>Cartões</h2>
+            <button id="closeModalBtn" class="modal-close">X</button>
+          </div>
           <button class="modal-item">
             <img src="./assets/icons/settings.png" alt="" />
             <p>Modo Dark</p>
@@ -262,8 +226,10 @@
 
       <div id="modal-trophy" class="modal hidden">
         <div class="modal-content">
-          <button id="closeModalBtn" class="modal-close">X</button>
-          <h2>Trofeis</h2>
+          <div class="modal-content-header">
+            <h2>Conquistas</h2>
+            <button id="closeModalBtn" class="modal-close">X</button>
+          </div>
           <button class="modal-item">
             <img src="./assets/icons/settings.png" alt="" />
             <p>Modo Dark</p>
@@ -279,18 +245,64 @@
 
       <div id="modal-suporte" class="modal hidden">
         <div class="modal-content">
-          <button id="closeModalBtn" class="modal-close">X</button>
-          <h2>Suporte</h2>
-          <button class="modal-item">
-            <img src="./assets/icons/settings.png" alt="" />
-            <p>Modo Dark</p>
-          </button>
+          <div class="modal-content-header">
+            <h2>Suporte</h2>
+            <button id="closeModalBtn" class="modal-close">X</button>
+          </div>
 
-          <button class="modal-item">
-            <img src="./assets/icons/settings.png" alt="" />
-            <p>Fazer Logout</p>
-          </button>
-          <span>Versão 1.0</span>
+          <div class="support-modal">
+            <p class="support-modal__title">Tópicos de ajuda</p>
+
+            <div class="support-topics">
+              <div class="support-topic">
+                <img
+                  class="support-topic__icon"
+                  src="./assets/icons/calendar.png"
+                  alt=""
+                />
+                <p class="support-topic__name">Gerais</p>
+              </div>
+
+              <ul class="support-topic__list">
+                <li class="support-topic__item">1. number</li>
+                <li class="support-topic__item">2. number</li>
+                <li class="support-topic__item">3. number</li>
+              </ul>
+            </div>
+
+            <div class="support-contact">
+              <p class="support-contact__title">Possui alguma dúvida?</p>
+
+              <div class="support-contact__section">
+                <div class="support-contact__info">
+                  <div class="support-contact__schedule">
+                    <span class="support-contact__label">
+                      Horário de atendimento</span
+                    >
+
+                    <span class="support-contact__text">
+                      Todos os dias 24h
+                    </span>
+                  </div>
+
+                  <div class="support-contact__phone">
+                    <img
+                      class="support-contact__icon"
+                      src="./assets/icons/bell.png"
+                      alt=""
+                    />
+                    <p class="support-contact__label">Telefone</p>
+                    <p class="support-contact__text">1234 123 1234</p>
+                  </div>
+                </div>
+
+                <button class="support-contact__button">
+                  <p>Fale conosco</p>
+                  <img src="./" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -309,14 +321,15 @@
             <img src="./assets/icons/settings.png" alt="" />
             <p>Fazer Logout</p>
           </button>
+
+          <button class="modal-item">
+            <img src="./assets/icons/settings.png" alt="" />
+            <p>Fazer Logout</p>
+          </button>
           <span>Versão 1.0</span>
         </div>
       </div>
     </div>
-
-    <div id="modal-relatorios" class="modal hidden">...</div>
-    <div id="modal-cartoes" class="modal hidden">...</div>
-    <div id="modal-conquistas" class="modal hidden">...</div>
 
     <script type="module" src="./scripts/app.js"></script>
   </body>
