@@ -62,6 +62,22 @@ export const state = {
       amount: 200,
       date: "2025-11-12",
     },
+    {
+      id: 14,
+      title: "Investimento LCI",
+      type: "expense",
+      category: "Investimentos",
+      amount: 100,
+      date: "2025-11-15",
+    },
+    {
+      id: 14,
+      title: "Investimento LCA",
+      type: "expense",
+      category: "Investimentos",
+      amount: 150,
+      date: "2025-11-15",
+    },
 
     // ==========================
     // Dezembro 2025
@@ -182,5 +198,14 @@ export const state = {
       amount: 90,
       date: "2026-01-03",
     },
+    {
+      id: 22,
+      title: "Investimento Renda fixa",
+      type: "expense",
+      category: "Investimentos",
+      amount: 900,
+      date: "2025-01-15",
+    },
+    
   ],
 };

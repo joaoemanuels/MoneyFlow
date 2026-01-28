@@ -7,11 +7,11 @@ const chart = {
   top: padding,
   bottom: canvas.height - padding,
   left: padding,
-  right: canvas.width - padding,
+  right: canvas.width,
 };
 
 const maxValue = 300000;
-const steps = 3;
+const steps = 4;
 const stepValue = maxValue / steps;
 
 ctx.strokeStyle = "#e0e0e0";
@@ -55,7 +55,10 @@ months.forEach((month, index) => {
   ctx.fillText(month, x - 10, canvas.height - 15);
 });
 
-const data = [120000, 180000, 90000, 200000, 150000, 220000, 170000, 140000];
+const data = [
+  120000, 180000, 90000, 200000, 150000, 220000, 170000, 140000, 140000, 140000,
+  140000,
+];
 
 data.forEach((value, index) => {
   const barHeight = (value / maxValue) * (chart.bottom - chart.top);

@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-columns: 90px 1fr 330px;
+  grid-template-columns: 90px 1fr 320px;
   height: 100vh;
 }
 
@@ -8,7 +8,6 @@ main {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 5px;
   padding: 10px 35px 0 35px;
 }
 
@@ -19,8 +18,8 @@ main {
   width: 90px;
   height: 100vh;
 
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   background: var(--color-sidebar-bg);
-  color: #fff;
 }
 
 .sidebar-menu {
@@ -28,14 +27,16 @@ main {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 20px;
+  padding: var(--space-md);
 }
 
 .sidebar-item,
 .sidebar-config {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: var(--space-md);
+
 }
 
 .menu-item {
@@ -43,8 +44,8 @@ main {
   justify-content: center;
   align-items: center;
 
-  padding: 10px;
-  border-radius: 10px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
 
   background: transparent;
   border: none;
@@ -68,10 +69,10 @@ main {
 
   width: 500px;
   height: 400px;
-  padding: 25px;
+  padding: var(--space-lg);
 
   background: #004cce;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
 }
 
 .modal-content {
@@ -98,8 +99,8 @@ main {
   justify-content: flex-end;
 
   width: fit-content;
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
   background-color: blue;
 
   cursor: pointer;
@@ -115,11 +116,11 @@ main {
 .modal-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-sm);
 
   width: fit-content;
-  padding: 10px;
-  border-radius: 10px;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
 
   cursor: pointer;
   transition: background 0.2s ease;
@@ -140,7 +141,7 @@ main {
 }
 
 .support-modal__title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
 }
 
 /* =====================
@@ -149,11 +150,11 @@ main {
 .support-topic {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-md);
 }
 
 .support-topic p {
-  font-size: 1.3rem;
+  font-size: var(--font-size-lg);
 }
 
 .support-topic img {
@@ -163,10 +164,10 @@ main {
 .support-topic__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
 
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: #fff;
 }
 
@@ -174,30 +175,30 @@ main {
    SUPORTE - CONTATO
 ===================== */
 .support-contact__title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
 }
 
 .support-contact__section {
   display: flex;
   justify-content: space-between;
 
-  padding: 20px;
-  margin-top: 15px;
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
 
   background-color: #084361;
-  border-radius: 10px;
+  border-radius: var(--space-md);
 }
 
 .support-contact__schedule {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
 .support-contact__phone {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-sm);
 }
 
 .support-contact__phone img {
@@ -208,9 +209,9 @@ main {
    SUPORTE - BOTÃO
 ===================== */
 .support-contact__button {
-  padding: 10px;
+  padding: var(--space-sm);
   border: 1px solid black;
-  border-radius: 15px;
+  border-radius: var(--radius-lg);
 
   cursor: pointer;
   transition: background 0.2s ease;
@@ -241,13 +242,13 @@ main {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--space-sm);
 
   width: 300px;
   height: 40px;
-  padding: 0 20px;
+  padding: 0 var(--space-lg);
 
-  background-color: #fff;
+  background-color: var(--color-card-bg);
   border-radius: 30px;
 }
 
@@ -264,8 +265,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px 0;
-  gap: 15px;
+  margin: var(--space-md) 0;
+  gap: var(--space-md);
 }
 
 .dashboard-card {
@@ -276,25 +277,31 @@ main {
 
   width: 100%;
   height: 170px;
-  padding: 16px;
+  padding: var(--space-md);
 
   background-color: var(--color-card-bg);
-  border-radius: 25px;
+  border-radius: var(--space-md);
   text-align: center;
 }
 
 .dashboard-card p {
-  font-size: 1.3rem;
+  font-size: var(--font-size-lg);
   font-weight: bold;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .dashboard-history {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm);
   height: 200px;
-  margin-bottom: 5px;
+  margin-bottom: var(--space-xs);
+  padding: var(--space-md);
+  padding-bottom: 0;
+  border-radius: var(--radius-md);
+
+  background-color: var(--color-card-bg);
+
 }
 
 .transactions-history {
@@ -318,7 +325,7 @@ main {
 
 .transactions-history::-webkit-scrollbar-thumb {
   background-color: #6c5ce7;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 
 .transactions-history::-webkit-scrollbar-thumb:hover {
@@ -332,19 +339,23 @@ main {
 
   width: 100%;
   min-width: 0;
-  padding: 10px 16px;
+  padding: var(--space-sm) var(--space-md);
 }
 
 .transaction-item span {
-  font-size: 0.9rem;
+  font-size: var(--font-size-md);
 }
 
 .dashboard-balance {
-  height: 200px;
+  height: 250px;
+  background-color: var(--color-card-bg);
+  margin-top: var(--space-sm);
+  border-radius: var(--radius-md);
+  padding: 10px;
 }
 
 .dashboard-balance_graphy {
-  height: 100%;
+  height: fit-content;
 }
 
 .dashboard-balance_graphy img {
@@ -359,40 +370,43 @@ main {
 .sidebar-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-sm);
 
   padding: 45px 35px 30px 35px;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 
   background-color: var(--color-sidebar-bg);
+}
+
+.sidebar-right h1 {
+  color: #FFF;
 }
 
 .sidebar-right_title {
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 10px;
+  padding-bottom: var(--space-sm);
 }
 
 /* ======================================================
    ACCOUNT CARD
 ====================================================== */
 .account-card {
-  padding: 16px;
-  border-radius: 16px;
+  padding: var(--space-md);
+  border-radius: var(--space-md);
 
-  background: linear-gradient(45deg, #004cce, #14acf6);
-  box-shadow: 10px 5px 5px rgb(0, 0, 0);
+  background: #EDE9FE;
+  box-shadow: 8px 4px 4px rgb(0, 0, 0);
 }
 
 .account-card p,
 .account-card span {
-  color: #fff;
+  color: #888686;
 }
 
 .account-card__number {
-  margin-bottom: 12px;
-
   text-align: center;
-  font-size: 1.3rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -401,13 +415,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  padding: var(--space-md) 0;
 }
 
 .account-card__holder {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .account-card__meta {
@@ -426,13 +440,13 @@ main {
 .account-card__cvv {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  margin: 0 7px;
+  gap: var(--space-xs);
+  margin: 0 var(--space-xs);
 }
 
 .account-card__expiry p:first-child,
 .account-card__cvv p:first-child {
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   opacity: 0.7;
 }
 

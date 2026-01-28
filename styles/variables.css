@@ -18,11 +18,11 @@
   --color-danger-light: #E74C4C;
   /* Hover/ativo */
 
-  --color-bg: #000;
+  --color-bg: #f1f0f8;
   /* Fundo geral do app */
-  --color-card-bg: #1A1B20;
+  --color-card-bg: #FFF;
   /* Fundo dos cards */
-  --color-sidebar-bg: #1A1B20;
+  --color-sidebar-bg: #5d46dc;
   /* Fundo da sidebar */
   --color-text: #0F172A;
   /* Texto principal */
