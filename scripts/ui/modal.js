@@ -14,49 +14,46 @@ export function hiddenModal() {
   const btnSuporte = document.getElementById("btn-modal-suporte");
   const modalSuporte = document.getElementById("modal-suporte");
 
-  const modais = [
-    modalGraphy,
-    modalCard,
-    modalTrophy,
-    modalConfig,
-    modalSuporte,
+  const pairs = [
+    { btn: btnGraphy, modal: modalGraphy },
+    { btn: btnCard, modal: modalCard },
+    { btn: btnTrophy, modal: modalTrophy },
+    { btn: btnConfig, modal: modalConfig },
+    { btn: btnSuporte, modal: modalSuporte },
   ];
 
-  function toggleModal(modal) {
-    const isOpen = !modal.classList.contains("hidden");
+  function toggleModal(targetModal, targetBtn) {
+    const isOpen = !targetModal.classList.contains("hidden");
 
-    modais.forEach((m) => m.classList.add("hidden"));
+    pairs.forEach(({ modal, btn }) => {
+      modal.classList.add("hidden");
+      btn.classList.remove("active");
+    });
 
     if (!isOpen) {
-      modal.classList.remove("hidden");
+      targetModal.classList.remove("hidden");
+      targetBtn.classList.add("active");
     }
   }
 
-  btnGraphy.addEventListener("click", function () {
-    toggleModal(modalGraphy);
-  });
-
-  btnCard.addEventListener("click", function () {
-    toggleModal(modalCard);
-  });
-
-  btnTrophy.addEventListener("click", function () {
-    toggleModal(modalTrophy);
-  });
-
-  btnConfig.addEventListener("click", function () {
-    toggleModal(modalConfig);
-  });
-
-  btnSuporte.addEventListener("click", function () {
-    toggleModal(modalSuporte);
+  pairs.forEach(({ btn, modal }) => {
+    btn.addEventListener("click", () => {
+      toggleModal(modal, btn);
+    });
   });
 
   const closeBtns = document.querySelectorAll(".modal-close");
-  closeBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const modal = btn.closest(".modal");
-      if (modal) modal.classList.add("hidden");
+
+  closeBtns.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", () => {
+      const modal = closeBtn.closest(".modal");
+
+      pairs.forEach(({ modal: m, btn }) => {
+        if (m === modal) {
+          m.classList.add("hidden");
+          btn.classList.remove("active");
+        }
+      });
     });
   });
 }

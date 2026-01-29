@@ -20,6 +20,8 @@ main {
 
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   background: var(--color-sidebar-bg);
+
+  border: 1px solid black;
 }
 
 .sidebar-menu {
@@ -47,16 +49,25 @@ main {
   padding: var(--space-sm);
   border-radius: var(--radius-md);
 
-  background: transparent;
   border: none;
   cursor: pointer;
 
   transition: background 0.2s ease;
 }
 
+.sidebar-item button,
+.sidebar-config button {
+  background: #f8f8ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
 .menu-item:hover,
 .menu-item.active {
-  background-color: rgb(236, 80, 80);
+  background-color: #7aebe7;
+  transform: scale(1.10);
+  border: 1px solid black;
+
 }
 
 /* =====================
@@ -65,14 +76,15 @@ main {
 .modal {
   position: absolute;
   bottom: 0;
-  margin-left: 90px;
+  margin-left: 95px;
 
   width: 500px;
   height: 400px;
   padding: var(--space-lg);
 
-  background: #004cce;
+  background: #EDE9FE;
   border-radius: var(--radius-lg);
+  border: 2px solid black;
 }
 
 .modal-content {
@@ -82,16 +94,20 @@ main {
   height: 100%;
 }
 
-.modal-content-header {
+.modal-content span {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-content img{
+  width: 60px;
+}
+ .modal-content-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.modal-content span {
-  display: flex;
-  justify-content: flex-end;
-}
+
 
 .modal-close {
   display: flex;
@@ -101,13 +117,18 @@ main {
   width: fit-content;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
-  background-color: blue;
+  background-color: var(--color-sidebar-bg);
 
+  color: white;
   cursor: pointer;
+  border: 1px solid black;
+
+  transition: background 0.2s ease;
 }
 
 .modal-close:hover {
-  background-color: rgb(22, 224, 180);
+  background-color: #7aebe7;
+  color: black;
 }
 
 /* =====================
@@ -118,16 +139,24 @@ main {
   align-items: center;
   gap: var(--space-sm);
 
-  width: fit-content;
   padding: var(--space-md);
   border-radius: var(--radius-md);
 
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .modal-item:hover {
-  background-color: rgb(15, 8, 8);
+  background-color: #7aebe7;
+  border: 1px solid black;
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal-item p {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /* =====================
@@ -254,11 +283,24 @@ main {
 
 .dashboard-search button {
   cursor: pointer;
+  width: 30px;
 }
 
 .dashboard-icons {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.dashboard-icons button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 50px;
+}
+
+.dashboard-icons button:hover {
+  background-color: #f8f8ff;
+  transform: scale(1.10);
+  border: 1px solid black;
 }
 
 .dashboard-cards {
@@ -282,6 +324,10 @@ main {
   background-color: var(--color-card-bg);
   border-radius: var(--space-md);
   text-align: center;
+}
+
+.dashboard-card img {
+  width: 70px;
 }
 
 .dashboard-card p {
@@ -332,6 +378,10 @@ main {
   background-color: #5847d6;
 }
 
+.transaction-image {
+  width: 50px;
+}
+
 .transaction-item {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -376,6 +426,7 @@ main {
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 
   background-color: var(--color-sidebar-bg);
+  border: 1px solid black;
 }
 
 .sidebar-right h1 {
@@ -386,6 +437,11 @@ main {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: var(--space-sm);
+  align-items: center;
+}
+
+.sidebar-right_title img {
+  width: 60px;
 }
 
 /* ======================================================
@@ -397,6 +453,7 @@ main {
 
   background: #EDE9FE;
   box-shadow: 8px 4px 4px rgb(0, 0, 0);
+  border: 1px solid black;
 }
 
 .account-card p,

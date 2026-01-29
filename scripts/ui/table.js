@@ -4,16 +4,16 @@ const list = document.querySelector(".transactions-list");
 const emptyMessage = document.getElementById("empty-message");
 
 const categoryIcons = {
-  Trabalho: "../../assets/icons/bell.png",
-  Moradia: "../../assets/icons/wallet.png",
-  Serviços: "../../assets/icons/home.png",
-  Lazer: "../../assets/icons/expense.png",
-  Vendas: "../../assets/icons/time-past.png",
-  Investimentos: "../../assets/icons/credit-card.png",
-  Alimentação: "../../assets/icons/trophy-star.png",
-  Freelance: "../../assets/icons/search.png",
-  Assinaturas: "../../assets/icons/settings.png",
-  Saúde: "../../assets/icons/calendar.png",
+  Trabalho: "../../assets/icons/work.svg",
+  Moradia: "../../assets/icons/rent.svg",
+  Serviços: "../../assets/icons/expenses.svg",
+  Lazer: "../../assets/icons/leisure.svg",
+  Vendas: "../../assets/icons/sales.svg",
+  Investimentos: "../../assets/icons/investment.svg",
+  Alimentação: "../../assets/icons/food.svg",
+  Freelance: "../../assets/icons/services.svg",
+  Assinaturas: "../../assets/icons/stream.svg",
+  Saúde: "../../assets/icons/health.svg",
 };
 
 export function renderTransactions() {
