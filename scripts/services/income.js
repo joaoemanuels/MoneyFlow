@@ -45,3 +45,67 @@ export function getExpenseByCategory() {
 
   return totalExpenseCategory;
 }
+
+export function getMonthlyIncome() {
+  const transacoes = state.transactions;
+
+  const months = transacoes.map((transacao) => {
+    const parts = transacao.date.split("-");
+    const year = parts[0];
+    const month = parts[1];
+
+    return `${year}-${month}`;
+  });
+
+  months.sort((a, b) => b.localeCompare(a));
+
+  const latestMonth = months[0];
+
+  const monthlyIncome = transacoes.filter((transacao) => {
+    const parts = transacao.date.split("-");
+    const year = parts[0];
+    const month = parts[1];
+    const transactionMonth = `${year}-${month}`;
+
+    return transacao.type === "income" && transactionMonth === latestMonth;
+  });
+
+  const total = monthlyIncome.reduce(
+    (acc, transacao) => acc + transacao.amount,
+    0,
+  );
+
+  return total;
+}
+
+export function getMonthlyExpense() {
+  const transacoes = state.transactions;
+
+  const months = transacoes.map((transacao) => {
+    const parts = transacao.date.split("-");
+    const year = parts[0];
+    const month = parts[1];
+
+    return `${year}-${month}`;
+  });
+
+  months.sort((a, b) => b.localeCompare(a));
+
+  const latestMonth = months[0];
+
+  const monthlyIncome = transacoes.filter((transacao) => {
+    const parts = transacao.date.split("-");
+    const year = parts[0];
+    const month = parts[1];
+    const transactionMonth = `${year}-${month}`;
+
+    return transacao.type === "expense" && transactionMonth === latestMonth;
+  });
+
+  const total = monthlyIncome.reduce(
+    (acc, transacao) => acc + transacao.amount,
+    0,
+  );
+
+  return total;
+}

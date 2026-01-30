@@ -1,4 +1,5 @@
 import { state } from "../data/storage.js";
+import { formatDate } from "../utils/formatDate.js";
 
 const list = document.querySelector(".transactions-list");
 const emptyMessage = document.getElementById("empty-message");
@@ -18,6 +19,7 @@ const categoryIcons = {
 
 export function renderTransactions() {
   const transactions = state.transactions;
+
   list.innerHTML = "";
 
   if (transactions.length === 0) {
@@ -26,7 +28,11 @@ export function renderTransactions() {
   }
   emptyMessage.classList.add("hidden");
 
-  transactions.forEach((transaction) => {
+  const sortedTransactions = [...transactions].sort((a, b) =>
+    b.date.localeCompare(a.date),
+  );
+
+  sortedTransactions.forEach((transaction) => {
     const li = document.createElement("li");
     li.classList.add("transaction-item", transaction.type);
 
@@ -41,9 +47,9 @@ export function renderTransactions() {
     />
     <span class="transaction-title">${transaction.title}</span>
     <span class="transaction-category">${transaction.category}</span>
-    <span class="transaction-date">${transaction.date}</span>
+    <span class="transaction-date">${formatDate(transaction.date)}</span>
     <span class="transaction-amount">
-      ${transaction.amount}
+      R$ ${transaction.amount}
     </span>
   `;
 

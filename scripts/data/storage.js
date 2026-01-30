@@ -17,7 +17,7 @@ export const state = {
     // Março 2025
     // ==========================
     { id: 7, title: "Salário", type: "income", category: "Trabalho", amount: 1950, date: "2025-03-05" },
-    { id: 8, title: "Freelance Landing Page", type: "income", category: "Freelance", amount: 400, date: "2025-03-18" },
+    { id: 8, title: "Freelance", type: "income", category: "Freelance", amount: 400, date: "2025-03-18" },
     { id: 9, title: "Internet", type: "expense", category: "Serviços", amount: 120, date: "2025-03-10" },
     { id: 10, title: "Mercado", type: "expense", category: "Alimentação", amount: 280, date: "2025-03-12" },
     { id: 11, title: "Cinema", type: "expense", category: "Lazer", amount: 60, date: "2025-03-22" },
@@ -47,7 +47,7 @@ export const state = {
     // Junho 2025
     // ==========================
     { id: 25, title: "Salário", type: "income", category: "Trabalho", amount: 2100, date: "2025-06-05" },
-    { id: 26, title: "Venda Landing Page", type: "income", category: "Vendas", amount: 700, date: "2025-06-19" },
+    { id: 26, title: "Vendas", type: "income", category: "Vendas", amount: 700, date: "2025-06-19" },
     { id: 27, title: "Mercado", type: "expense", category: "Alimentação", amount: 310, date: "2025-06-12" },
     { id: 28, title: "Academia", type: "expense", category: "Saúde", amount: 90, date: "2025-06-03" },
     { id: 29, title: "Assinatura Adobe", type: "expense", category: "Assinaturas", amount: 99, date: "2025-06-02" },
@@ -117,7 +117,7 @@ export const state = {
     // Janeiro 2026 (mais recente)
     // ==========================
     { id: 67, title: "Salário", type: "income", category: "Trabalho", amount: 2500, date: "2026-01-05" },
-    { id: 68, title: "Freelance Landing Page", type: "income", category: "Freelance", amount: 800, date: "2026-01-14" },
+    { id: 68, title: "Freelance", type: "income", category: "Freelance", amount: 800, date: "2026-01-14" },
     { id: 69, title: "Aluguel", type: "expense", category: "Moradia", amount: 660, date: "2026-01-06" },
     { id: 70, title: "Internet", type: "expense", category: "Serviços", amount: 120, date: "2026-01-10" },
     { id: 71, title: "Mercado", type: "expense", category: "Alimentação", amount: 300, date: "2026-01-12" },

@@ -2,6 +2,8 @@ import {
   getTotalIncome,
   getTotalExpense,
   getExpenseByCategory,
+  getMonthlyIncome,
+  getMonthlyExpense,
 } from "../services/income.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
 
@@ -11,13 +13,15 @@ const investimento = document.getElementById("total-invested");
 const saida = document.getElementById("total-expense");
 
 const totalEntrada = getTotalIncome();
+const totalEntradaMes = getMonthlyIncome();
 const totalSaida = getTotalExpense();
+const totalSaidaMes = getMonthlyExpense();
 const saldoDisponivel = totalEntrada - totalSaida;
 
 const expensesByCategory = getExpenseByCategory();
 const totalInvestido = expensesByCategory["Investimentos"] || 0;
 
 saldo.textContent = formatCurrency(saldoDisponivel);
-entrada.textContent = formatCurrency(totalEntrada);
+entrada.textContent = formatCurrency(totalEntradaMes);
 investimento.textContent = formatCurrency(totalInvestido);
-saida.textContent = formatCurrency(totalSaida);
+saida.textContent = formatCurrency(totalSaidaMes);
