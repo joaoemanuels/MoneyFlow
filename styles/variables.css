@@ -21,6 +21,23 @@
   --color-bg: #f1f0f8; 
   --color-bg: #8AB4F8; 
   --color-bg: #f8f8ff; 
+
+
+/*------------------------------------------------------------- */
+
+  --dark-bg: #0F1020;
+  --dark-sidebar: #161833;
+
+--dark-card: #1C1F3A;
+--dark-card-hover: #24275A;
+--primary: #8B5CF6;   
+--primary-strong: #7C3AED;  
+--text-primary: #EDEDFC;
+--text-secondary: #B6B8D6;
+--text-muted: #7A7CA8;
+
+
+/*--------------------------------------------------- */
   /* Fundo geral do app */
   --color-card-bg: #FFF;
   /* Fundo dos cards */

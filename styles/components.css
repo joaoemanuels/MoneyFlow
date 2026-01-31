@@ -96,11 +96,6 @@ main {
   height: 100%;
 }
 
-.modal-content span {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .modal-content img {
   width: 60px;
 }
@@ -137,9 +132,6 @@ main {
   color: black;
 }
 
-/* =====================
-   MODAL - ITENS
-===================== */
 .modal-item {
   display: flex;
   align-items: center;
@@ -165,9 +157,11 @@ main {
   font-weight: bold;
 }
 
-/* =====================
-   SUPORTE - MODAL
-===================== */
+.modal-content span {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .support-modal {
   display: flex;
   flex-direction: column;
@@ -179,21 +173,25 @@ main {
   font-size: var(--font-size-lg);
 }
 
-/* =====================
-   SUPORTE - TÓPICOS
-===================== */
+.support-topics {
+  padding: 20px;
+  box-shadow: 3px 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
 .support-topic {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-}
-
-.support-topic p {
-  font-size: var(--font-size-lg);
+  gap: var(--space-sm);
 }
 
 .support-topic img {
   width: 20px;
+}
+
+.support-topic p {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
 }
 
 .support-topic__list {
@@ -206,9 +204,12 @@ main {
   color: #fff;
 }
 
-/* =====================
-   SUPORTE - CONTATO
-===================== */
+.support-topic__item {
+  color: rgb(51, 50, 50);
+}
+
+.support-contact {}
+
 .support-contact__title {
   font-size: var(--font-size-lg);
 }
@@ -220,14 +221,27 @@ main {
   padding: var(--space-lg);
   margin-top: var(--space-md);
 
-  background-color: #084361;
+  background-color: #5d46dc;
   border-radius: var(--space-md);
+  border: 1px solid black;
 }
+
+.support-contact__info {}
 
 .support-contact__schedule {
   display: flex;
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
+}
+
+.support-contact__label {
+  font-weight: bold;
+  color: rgb(209, 209, 209);
+  font-size: 0.8rem;
+}
+
+.support-contact__text {
+  color: rgb(201, 201, 201);
 }
 
 .support-contact__phone {
@@ -240,22 +254,32 @@ main {
   width: 20px;
 }
 
-/* =====================
-   SUPORTE - BOTÃO
-===================== */
 .support-contact__button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: var(--space-sm);
   border: 1px solid black;
   border-radius: var(--radius-lg);
 
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: transform 0.2s ease;
+  background-color: #8AB4F8;
+}
+
+.support-contact__button p {
+  color: rgb(41, 41, 41);
+  font-weight: bold;
+}
+
+.support-contact__button img {
+  width: 20px;
 }
 
 .support-contact__button:hover {
-  background-color: rgb(137, 137, 243);
+  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-
 
 /* ======================================================
    DASHBOARD — TOPO
@@ -419,7 +443,6 @@ main {
   height: 100%;
 }
 
-
 /* ======================================================
    SIDEBAR DIREITA
 ====================================================== */
@@ -446,8 +469,14 @@ main {
   align-items: center;
 }
 
-.sidebar-right_title img {
+.sidebar-right_profile {
   width: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease
+}
+
+.sidebar-right_profile:hover {
+  transform: scale(1.15);
 }
 
 /* ======================================================

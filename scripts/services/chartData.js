@@ -1,37 +1,23 @@
+import { state } from "../data/storage.js";
+
 const canvas = document.getElementById("finance-chart");
 const ctx = canvas.getContext("2d");
 
+/* ======================
+   CONFIGURAÇÕES GERAIS
+====================== */
 const padding = 50;
 
 const chart = {
   top: padding,
   bottom: canvas.height - padding,
   left: padding,
-  right: canvas.width,
+  right: canvas.width - padding,
 };
 
-const maxValue = 300000;
-const steps = 4;
-const stepValue = maxValue / steps;
-
-ctx.strokeStyle = "#e0e0e0";
-ctx.fillStyle = "#636e72";
-ctx.font = "12px Arial";
-
-for (let i = 0; i <= steps; i++) {
-  const value = maxValue - i * stepValue;
-  const y = chart.top + (i * (chart.bottom - chart.top)) / steps;
-
-  // linha horizontal
-  ctx.beginPath();
-  ctx.moveTo(chart.left, y);
-  ctx.lineTo(chart.right, y);
-  ctx.stroke();
-
-  // texto (300k, 200k...)
-  ctx.fillText(`${value / 1000}k`, 10, y + 4);
-}
-
+/* ======================
+   MESES
+====================== */
 const months = [
   "Jan",
   "Fev",
@@ -47,19 +33,70 @@ const months = [
   "Dez",
 ];
 
+/* ======================
+   GERAR DADOS (DESPESAS)
+====================== */
+
+const SELECTED_YEAR = 2025;
+
+const data = Array(12).fill(0);
+
+state.transactions.forEach((transaction) => {
+  if (transaction.type !== "expense") return;
+
+  const date = new Date(transaction.date);
+  const year = date.getFullYear();
+
+  if (year !== SELECTED_YEAR) return;
+
+  const monthIndex = date.getMonth();
+  data[monthIndex] += transaction.amount;
+});
+
+/* ======================
+   ESCALA DO GRÁFICO
+====================== */
+const maxValue = Math.max(...data) * 1.2 || 1;
+const steps = 4;
+const stepValue = maxValue / steps;
+
+/* ======================
+   ESTILOS
+====================== */
+ctx.strokeStyle = "#e0e0e0";
+ctx.fillStyle = "#636e72";
+ctx.font = "12px Arial";
+
+/* ======================
+   LINHAS HORIZONTAIS + VALORES
+====================== */
+for (let i = 0; i <= steps; i++) {
+  const value = maxValue - i * stepValue;
+  const y = chart.top + (i * (chart.bottom - chart.top)) / steps;
+
+  // linha
+  ctx.beginPath();
+  ctx.moveTo(chart.left, y);
+  ctx.lineTo(chart.right, y);
+  ctx.stroke();
+
+  // texto (ex: 2k, 4k)
+  ctx.fillText(`R$ ${(value / 1000).toFixed(1)}k`, 10, y + 4);
+}
+
+/* ======================
+   MESES NO EIXO X
+====================== */
 const gap = (chart.right - chart.left) / months.length;
 
 months.forEach((month, index) => {
   const x = chart.left + gap * index + gap / 2;
-
   ctx.fillText(month, x - 10, canvas.height - 15);
 });
 
-const data = [
-  120000, 180000, 90000, 200000, 150000, 220000, 170000, 140000, 140000, 140000,
-  140000,
-];
-
+/* ======================
+   BARRAS
+====================== */
 data.forEach((value, index) => {
   const barHeight = (value / maxValue) * (chart.bottom - chart.top);
 
