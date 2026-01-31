@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
     <link rel="icon" href="./assets/icons/Logotipo.png" type="image/png" />
     <title>MoneyFlow</title>
   </head>
@@ -139,8 +140,17 @@
 
       <section class="dashboard-balance">
         <div class="dashboard-balance_title">
-          <h2>Resumo</h2>
-          <span>Ultimos 12 meses</span>
+          <div>
+            <h2>Resumo</h2>
+            <span>Ultimos 12 meses</span>
+          </div>
+          <div class="dashboard-balance_filter">
+            <label for="selectAno">Filtrar ano</label>
+            <select id="selectAno">
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+            </select>
+          </div>
         </div>
 
         <div class="dashboard-balance_graphy">
@@ -332,10 +342,17 @@
             <p>Perfil</p>
           </button>
 
-          <button class="modal-item">
-            <img src="./assets/icons/dark-mode.svg" alt="" />
-            <p>Modo Dark</p>
-          </button>
+          <ul class="app__card-list">
+            <li class="app__card-list-item">
+              <label class="toggle">
+                <input class="toggle-checkbox" type="checkbox" />
+                <div id="alternar-tema" class="toggle-switch"></div>
+              </label>
+            </li>
+            <li class="app__card-list-item">
+              <label class="app__card-list-label"> Dark Mode </label>
+            </li>
+          </ul>
 
           <button class="modal-item">
             <img src="./assets/icons/logout.svg" alt="" />
