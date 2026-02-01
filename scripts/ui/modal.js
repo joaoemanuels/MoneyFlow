@@ -1,9 +1,6 @@
 export function hiddenModal() {
-  const btnGraphy = document.getElementById("btn-modal-graphy");
-  const modalGraphy = document.getElementById("modal-graphy");
-
-  const btnCard = document.getElementById("btn-modal-card");
-  const modalCard = document.getElementById("modal-card");
+  const btnplus = document.getElementById("btn-modal-plus");
+  const modalplus = document.getElementById("modal-plus");
 
   const btnTrophy = document.getElementById("btn-modal-trophy");
   const modalTrophy = document.getElementById("modal-trophy");
@@ -15,8 +12,7 @@ export function hiddenModal() {
   const modalSuporte = document.getElementById("modal-suporte");
 
   const pairs = [
-    { btn: btnGraphy, modal: modalGraphy },
-    { btn: btnCard, modal: modalCard },
+    { btn: btnplus, modal: modalplus },
     { btn: btnTrophy, modal: modalTrophy },
     { btn: btnConfig, modal: modalConfig },
     { btn: btnSuporte, modal: modalSuporte },
@@ -46,11 +42,14 @@ export function hiddenModal() {
 
   closeBtns.forEach((closeBtn) => {
     closeBtn.addEventListener("click", () => {
-      const modal = closeBtn.closest(".modal");
+      const currentModal = closeBtn.closest(
+        "#modal-plus, #modal-trophy, #modal-config, #modal-suporte",
+      );
+      if (!currentModal) return;
 
-      pairs.forEach(({ modal: m, btn }) => {
-        if (m === modal) {
-          m.classList.add("hidden");
+      pairs.forEach(({ modal, btn }) => {
+        if (modal === currentModal) {
+          modal.classList.add("hidden");
           btn.classList.remove("active");
         }
       });
