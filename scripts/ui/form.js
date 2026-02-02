@@ -1,5 +1,6 @@
 import { addTransaction } from "../services/transactionsService.js";
 import { renderSummary } from "../ui/summary.js";
+import { drawChart } from "../services/chartData.js";
 
 const form = document.querySelector(".transaction-form");
 const modalPlus = document.getElementById("modal-plus");
@@ -9,7 +10,6 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const formData = new FormData(form);
-
   const title = formData.get("desc");
   const amount = Number(formData.get("value"));
   const type = formData.get("type");
@@ -21,15 +21,9 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  addTransaction({
-    title,
-    amount,
-    type,
-    category,
-    date,
-  });
-
+  addTransaction({ title, amount, type, category, date });
   renderSummary();
+  drawChart();
 
   modalPlus.classList.add("hidden");
   btnPlus.classList.remove("active");

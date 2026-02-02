@@ -40,7 +40,7 @@ export function renderTransactions() {
       categoryIcons[transaction.category] || "../../assets/icons/default.svg";
 
     li.innerHTML = `
-      <img class="transaction-image" src="${icon} alt="${transaction.category}" />
+      <img class="transaction-image" src="${icon}" alt="${transaction.category}" />
       <span class="transaction-title">${transaction.title}</span>
       <span class="transaction-category">${transaction.category}</span>
       <span class="transaction-date">${formatDate(transaction.date)}</span>

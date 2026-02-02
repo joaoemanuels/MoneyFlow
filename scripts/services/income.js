@@ -39,11 +39,7 @@ export function getMonthlyIncome() {
   if (!latestMonth) return 0;
 
   return state.transactions
-    .filter(
-      (t) =>
-        t.type === "income" &&
-        t.date.startsWith(latestMonth)
-    )
+    .filter((t) => t.type === "income" && t.date.startsWith(latestMonth))
     .reduce((acc, t) => acc + t.amount, 0);
 }
 
@@ -52,10 +48,6 @@ export function getMonthlyExpense() {
   if (!latestMonth) return 0;
 
   return state.transactions
-    .filter(
-      (t) =>
-        t.type === "expense" &&
-        t.date.startsWith(latestMonth)
-    )
+    .filter((t) => t.type === "expense" && t.date.startsWith(latestMonth))
     .reduce((acc, t) => acc + t.amount, 0);
 }
