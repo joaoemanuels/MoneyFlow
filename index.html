@@ -209,31 +209,60 @@
           <div class="modal-add-body">
             <form class="transaction-form">
               <div class="form-group">
-                <label>Descrição</label>
-                <input type="text" placeholder="Ex: Salário" />
+                <label>Descrição*</label>
+                <input
+                  type="text"
+                  placeholder="Ex: Salário"
+                  name="desc"
+                  required
+                />
               </div>
 
               <div class="form-group">
-                <label>Valor</label>
-                <input type="number" placeholder="Ex: 1200" />
+                <label>Valor*</label>
+                <input
+                  type="number"
+                  placeholder="Ex: 1200"
+                  name="value"
+                  required
+                />
               </div>
 
               <div class="form-group">
-                <label>Tipo</label>
-                <select>
+                <label>Tipo*</label>
+                <select name="type" required>
+                  <option disabled selected>Selecione</option>
                   <option value="income">Entrada</option>
                   <option value="expense">Saída</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label>Categoria</label>
-                <input type="text" placeholder="Ex: Trabalho" />
+                <label for="selectAno">Categoria*</label>
+                <select id="selectAno" name="category" required>
+                  <option name="category" disabled selected>Selecione</option>
+                  <option value="Trabalho">Trabalho</option>
+                  <option value="Moradia">Moradia</option>
+                  <option value="Servicos">Serviços</option>
+                  <option value="Lazer">Lazer</option>
+                  <option value="Vendas">Vendas</option>
+                  <option value="Investimentos">Investimentos</option>
+                  <option value="Alimentacao">Alimentação</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Assinaturas">Assinaturas</option>
+                  <option value="Saude">Saúde</option>
+                </select>
               </div>
 
               <div class="form-group">
-                <label>Data</label>
-                <input type="date" />
+                <label>Data*</label>
+                <input
+                  type="date"
+                  name="date"
+                  min="2000-01-01"
+                  max="2040-12-31"
+                  required
+                />
               </div>
 
               <button class="btn-add-transaction" type="submit">

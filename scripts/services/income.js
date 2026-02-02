@@ -1,4 +1,5 @@
 import { state } from "../data/storage.js";
+import { getLatestMonth } from "../utils/date.js";
 
 export function getTotalIncome() {
   const transacoes = state.transactions;
@@ -49,63 +50,21 @@ export function getExpenseByCategory() {
 export function getMonthlyIncome() {
   const transacoes = state.transactions;
 
-  const months = transacoes.map((transacao) => {
-    const parts = transacao.date.split("-");
-    const year = parts[0];
-    const month = parts[1];
+  const latestMonth = getLatestMonth(transacoes, "income");
+  if (!latestMonth) return 0;
 
-    return `${year}-${month}`;
-  });
-
-  months.sort((a, b) => b.localeCompare(a));
-
-  const latestMonth = months[0];
-
-  const monthlyIncome = transacoes.filter((transacao) => {
-    const parts = transacao.date.split("-");
-    const year = parts[0];
-    const month = parts[1];
-    const transactionMonth = `${year}-${month}`;
-
-    return transacao.type === "income" && transactionMonth === latestMonth;
-  });
-
-  const total = monthlyIncome.reduce(
-    (acc, transacao) => acc + transacao.amount,
-    0,
-  );
-
-  return total;
+  return transacoes
+    .filter((t) => t.type === "income" && t.date.startsWith(latestMonth))
+    .reduce((acc, t) => acc + t.amount, 0);
 }
 
 export function getMonthlyExpense() {
   const transacoes = state.transactions;
 
-  const months = transacoes.map((transacao) => {
-    const parts = transacao.date.split("-");
-    const year = parts[0];
-    const month = parts[1];
+  const latestMonth = getLatestMonth(transacoes, "expense");
+  if (!latestMonth) return 0;
 
-    return `${year}-${month}`;
-  });
-
-  months.sort((a, b) => b.localeCompare(a));
-
-  const latestMonth = months[0];
-
-  const monthlyIncome = transacoes.filter((transacao) => {
-    const parts = transacao.date.split("-");
-    const year = parts[0];
-    const month = parts[1];
-    const transactionMonth = `${year}-${month}`;
-
-    return transacao.type === "expense" && transactionMonth === latestMonth;
-  });
-
-  const total = monthlyIncome.reduce(
-    (acc, transacao) => acc + transacao.amount,
-    0,
-  );
-
-  return total;
+  return transacoes
+    .filter((t) => t.type === "expense" && t.date.startsWith(latestMonth))
+    .reduce((acc, t) => acc + t.amount, 0);
 }
