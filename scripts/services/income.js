@@ -1,70 +1,61 @@
 import { state } from "../data/storage.js";
 import { getLatestMonth } from "../utils/date.js";
 
+/* ======================
+   TOTAIS GERAIS
+====================== */
+
 export function getTotalIncome() {
-  const transacoes = state.transactions;
-
-  const transacoesIncome = transacoes.filter((transacao) => {
-    return transacao.type === "income";
-  });
-
-  const totalIncome = transacoesIncome.reduce(
-    (acc, transacao) => acc + transacao.amount,
-    0,
-  );
-
-  return totalIncome;
+  return state.transactions
+    .filter((t) => t.type === "income")
+    .reduce((acc, t) => acc + t.amount, 0);
 }
 
 export function getTotalExpense() {
-  const transacoes = state.transactions;
-
-  const transacoesExpense = transacoes.filter((transacao) => {
-    return transacao.type === "expense";
-  });
-
-  const totalExpense = transacoesExpense.reduce(
-    (acc, transacao) => acc + transacao.amount,
-    0,
-  );
-
-  return totalExpense;
+  return state.transactions
+    .filter((t) => t.type === "expense")
+    .reduce((acc, t) => acc + t.amount, 0);
 }
+
+/* ======================
+   DESPESA POR CATEGORIA
+====================== */
 
 export function getExpenseByCategory() {
-  const transacoes = state.transactions;
-
-  const transacoesCategory = transacoes.filter((transacao) => {
-    return transacao.type === "expense";
-  });
-
-  const totalExpenseCategory = transacoesCategory.reduce((acc, transacao) => {
-    acc[transacao.category] = (acc[transacao.category] || 0) + transacao.amount;
-
-    return acc;
-  }, {});
-
-  return totalExpenseCategory;
+  return state.transactions
+    .filter((t) => t.type === "expense")
+    .reduce((acc, t) => {
+      acc[t.category] = (acc[t.category] || 0) + t.amount;
+      return acc;
+    }, {});
 }
 
-export function getMonthlyIncome() {
-  const transacoes = state.transactions;
+/* ======================
+   TOTAIS MENSAIS
+====================== */
 
-  const latestMonth = getLatestMonth(transacoes, "income");
+export function getMonthlyIncome() {
+  const latestMonth = getLatestMonth(state.transactions);
   if (!latestMonth) return 0;
 
-  return transacoes
-    .filter((t) => t.type === "income" && t.date.startsWith(latestMonth))
+  return state.transactions
+    .filter(
+      (t) =>
+        t.type === "income" &&
+        t.date.startsWith(latestMonth)
+    )
     .reduce((acc, t) => acc + t.amount, 0);
 }
 
 export function getMonthlyExpense() {
-  const transacoes = state.transactions;
-
-  const latestMonth = getLatestMonth(transacoes, "expense");
+  const latestMonth = getLatestMonth(state.transactions);
   if (!latestMonth) return 0;
 
-  return transacoes
-    .filter((t) => t.type === "expense" && t.date.startsWith(latestMonth))
+  return state.transactions
+    .filter(
+      (t) =>
+        t.type === "expense" &&
+        t.date.startsWith(latestMonth)
+    )
     .reduce((acc, t) => acc + t.amount, 0);
 }

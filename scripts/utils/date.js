@@ -1,9 +1,7 @@
-export function getLatestMonth(transactions, type) {
-  const months = transactions
-    .filter((t) => t.type === type)
-    .map((t) => t.date.slice(0, 7)); // YYYY-MM
+export function getLatestMonth(transactions) {
+  if (!transactions || transactions.length === 0) return null;
 
-  if (months.length === 0) return null;
-
-  return months.sort((a, b) => b.localeCompare(a))[0];
+  return transactions
+    .map((t) => t.date.slice(0, 7))
+    .sort((a, b) => b.localeCompare(a))[0];
 }

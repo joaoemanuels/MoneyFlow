@@ -19,13 +19,13 @@ const categoryIcons = {
 
 export function renderTransactions() {
   const transactions = state.transactions;
-
   list.innerHTML = "";
 
   if (transactions.length === 0) {
     emptyMessage.classList.remove("hidden");
     return;
   }
+
   emptyMessage.classList.add("hidden");
 
   const sortedTransactions = [...transactions].sort((a, b) =>
@@ -40,18 +40,14 @@ export function renderTransactions() {
       categoryIcons[transaction.category] || "../../assets/icons/default.svg";
 
     li.innerHTML = `
-    <img 
-      class="transaction-image"
-      src="${icon}"
-      alt="${transaction.category}"
-    />
-    <span class="transaction-title">${transaction.title}</span>
-    <span class="transaction-category">${transaction.category}</span>
-    <span class="transaction-date">${formatDate(transaction.date)}</span>
-    <span class="transaction-amount">
-      R$ ${transaction.amount}
-    </span>
-  `;
+      <img class="transaction-image" src="${icon} alt="${transaction.category}" />
+      <span class="transaction-title">${transaction.title}</span>
+      <span class="transaction-category">${transaction.category}</span>
+      <span class="transaction-date">${formatDate(transaction.date)}</span>
+      <span class="transaction-amount">
+        R$ ${transaction.amount.toFixed(2)}
+      </span>
+    `;
 
     list.appendChild(li);
   });

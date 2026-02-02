@@ -14,18 +14,19 @@ export function renderCards() {
   const investimento = document.getElementById("total-invested");
   const saida = document.getElementById("total-expense");
 
-  const totalEntrada = getTotalIncome();
-  const totalSaida = getTotalExpense();
-  const totalEntradaMes = getMonthlyIncome();
-  const totalSaidaMes = getMonthlyExpense();
+  const totalIncome = getTotalIncome();
+  const totalExpense = getTotalExpense();
 
-  const saldoDisponivel = totalEntrada - totalSaida;
+  const monthlyIncome = getMonthlyIncome();
+  const monthlyExpense = getMonthlyExpense();
+
+  const saldoDisponivel = totalIncome - totalExpense;
 
   const expensesByCategory = getExpenseByCategory();
   const totalInvestido = expensesByCategory["Investimentos"] || 0;
 
   saldo.textContent = formatCurrency(saldoDisponivel);
-  entrada.textContent = formatCurrency(totalEntradaMes);
+  entrada.textContent = formatCurrency(monthlyIncome);
+  saida.textContent = formatCurrency(monthlyExpense);
   investimento.textContent = formatCurrency(totalInvestido);
-  saida.textContent = formatCurrency(totalSaidaMes);
 }

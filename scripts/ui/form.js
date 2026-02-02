@@ -10,27 +10,25 @@ form.addEventListener("submit", (event) => {
 
   const formData = new FormData(form);
 
-  const title = formData.get("desc"); //mudar pra title no index
+  const title = formData.get("desc");
   const amount = Number(formData.get("value"));
   const type = formData.get("type");
   const category = formData.get("category");
   const date = formData.get("date");
 
-  
   if (!title || !amount || !type || !category || !date) {
     alert("Preencha todos os campos corretamente.");
     return;
   }
 
-  const transaction = {
+  addTransaction({
     title,
     amount,
     type,
     category,
     date,
-  };
+  });
 
-  addTransaction(transaction);
   renderSummary();
 
   modalPlus.classList.add("hidden");
