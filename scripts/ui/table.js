@@ -17,8 +17,7 @@ const categoryIcons = {
   Saúde: "../../assets/icons/health.svg",
 };
 
-export function renderTransactions() {
-  const transactions = state.transactions;
+export function renderTransactions(transactions = state.transactions) {
   list.innerHTML = "";
 
   if (transactions.length === 0) {

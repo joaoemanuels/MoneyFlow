@@ -1,14 +1,14 @@
 body {
   display: grid;
-  grid-template-columns: 102px 1fr 320px;
-  height: 100vh;
+  grid-template-columns: 80px 1fr 20%;
+  height: 100%;
 }
 
 main {
   display: flex;
   height: 100%;
   flex-direction: column;
-  padding: 10px 35px 0 35px;
+  padding: 10px 15px 0 15px;
 }
 
 /* ======================================================
@@ -16,7 +16,7 @@ main {
 ====================================================== */
 .sidebar {
   width: 80px;
-  height: 100vh;
+  height: 100%;
 
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   background: var(--color-secundary);
@@ -108,12 +108,6 @@ main {
   align-items: center;
 }
 
-.dashboard-actions {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
 .dashboard-search {
   display: flex;
   flex-direction: row-reverse;
@@ -176,7 +170,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  height: 225px;
+  height: 205px;
   margin-bottom: var(--space-xs);
   padding: var(--space-md);
   padding-bottom: 0;
@@ -233,11 +227,16 @@ main {
 }
 
 .dashboard-balance {
-  height: 250px;
+  height: 100%;
   background-color: var(--color-card-bg);
   margin-top: var(--space-sm);
   border-radius: var(--radius-md);
   padding: 10px;
+}
+
+#finance-chart {
+  width: 100%;
+  max-width: 1100px;
 }
 
 .dashboard-balance_title {
@@ -332,8 +331,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  height: 100%;
 
-  padding: 45px 35px 30px 35px;
+  padding: 45px 15px 30px 15px;
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 
   background-color: var(--color-secundary);

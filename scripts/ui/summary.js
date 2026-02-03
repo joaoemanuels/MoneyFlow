@@ -1,9 +1,10 @@
-import { renderCards } from "../ui/cards.js";
-import { renderTransactions } from "../ui/table.js";
+import { renderCards } from "./cards.js";
+import { renderTransactions } from "./table.js";
 
 import "../services/chartData.js";
-import "../ui/greeting.js";
+import "./greeting.js";
 import "./form.js";
+import {} from "./search.js";
 
 export function renderSummary() {
   renderCards();

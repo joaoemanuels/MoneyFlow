@@ -5,3 +5,4 @@ export function getLatestMonth(transactions) {
     .map((transaction) => transaction.date.slice(0, 7))
     .sort((a, b) => b.localeCompare(a))[0];
 }
+

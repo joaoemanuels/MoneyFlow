@@ -7,3 +7,16 @@ export function formatDate(date) {
 
   return `${day}/${month}/${year}`;
 }
+
+export function normalizeDate(date) {
+  const [year, month, day] = date.split("-");
+  return [
+    date,
+    `${day}/${month}`,
+    `${month}/${year}`,
+    `${day}/${month}/${year}`,
+    year,
+    month,
+    day,
+  ];
+}
