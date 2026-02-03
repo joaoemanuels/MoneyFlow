@@ -52,11 +52,11 @@ export function initChart() {
   if (selectAno) {
     selectAno.addEventListener("change", (e) => {
       SELECTED_YEAR = Number(e.target.value);
-      drawChart(); // redesenha ao mudar ano
+      drawChart();
     });
   }
 
-  drawChart(); // primeira renderização
+  drawChart();
 }
 
 /* ======================
@@ -67,7 +67,6 @@ export function drawChart() {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Arrays para os valores de cada mês
   const incomeData = Array(12).fill(0);
   const expenseData = Array(12).fill(0);
 
@@ -76,15 +75,22 @@ export function drawChart() {
     if (date.getFullYear() !== SELECTED_YEAR) return;
 
     const monthIndex = date.getMonth();
+
     if (transaction.type === "income") {
       incomeData[monthIndex] += transaction.amount;
-    } else if (transaction.type === "expense") {
+    }
+
+    if (transaction.type === "expense") {
       expenseData[monthIndex] += transaction.amount;
     }
   });
 
-  // ESCALA
-  const maxValue = Math.max(...incomeData, ...expenseData) * 1.2 || 1;
+  /* ======================
+     ESCALA (BASEADA NO TOTAL)
+  ====================== */
+  const totals = incomeData.map((income, i) => income + expenseData[i]);
+
+  const maxValue = Math.max(...totals) * 1.2 || 1;
   const steps = 4;
   const stepValue = maxValue / steps;
 
@@ -112,23 +118,41 @@ export function drawChart() {
     ctx.fillText(month, x - 10, canvas.height - 15);
   });
 
-  // BARRAS
-  dataBar(incomeData, gap, "#00b894"); // verde = income
-  dataBar(expenseData, gap, "#6c5ce7"); // roxo = expense
+  // BARRAS EMPILHADAS
+  drawStackedBars(incomeData, expenseData, gap, maxValue);
 }
 
 /* ======================
-   FUNÇÃO AUXILIAR PARA BARRAS
+   BARRAS EMPILHADAS
 ====================== */
-function dataBar(dataArray, gap, color) {
-  const maxValue = Math.max(...dataArray) * 1.2 || 1;
+function drawStackedBars(incomeData, expenseData, gap, maxValue) {
+  const chartHeight = chart.bottom - chart.top;
 
-  dataArray.forEach((value, index) => {
-    const barHeight = (value / maxValue) * (chart.bottom - chart.top);
+  incomeData.forEach((income, index) => {
+    const expense = expenseData[index];
+    const total = income + expense;
+
+    if (total === 0) return;
+
+    const totalHeight = (total / maxValue) * chartHeight;
+
+    const incomeHeight = (income / total) * totalHeight;
+    const expenseHeight = (expense / total) * totalHeight;
+
     const x = chart.left + gap * index + 10;
-    const y = chart.bottom - barHeight;
+    let y = chart.bottom;
 
-    ctx.fillStyle = color;
-    ctx.fillRect(x, y, gap - 20, barHeight);
+    // EXPENSE (roxo) — base
+    if (expense > 0) {
+      ctx.fillStyle = "#6c5ce7";
+      ctx.fillRect(x, y - expenseHeight, gap - 20, expenseHeight);
+      y -= expenseHeight;
+    }
+
+    // INCOME (verde) — topo
+    if (income > 0) {
+      ctx.fillStyle = "#00b894";
+      ctx.fillRect(x, y - incomeHeight, gap - 20, incomeHeight);
+    }
   });
 }

@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-columns: 90px 1fr 320px;
+  grid-template-columns: 102px 1fr 320px;
   height: 100vh;
 }
 
@@ -39,6 +39,35 @@ main {
   align-items: center;
   gap: var(--space-md);
 
+}
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip-text {
+  z-index: 99;
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-color: #1e293b;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  font-size: 0.75rem;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip:hover .tooltip-text {
+  opacity: 1;
 }
 
 .menu-item {
@@ -89,10 +118,10 @@ main {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
   gap: var(--space-sm);
 
-  width: 300px;
+  width: 400px;
   height: 40px;
   padding: 0 var(--space-lg);
 
@@ -105,21 +134,9 @@ main {
   width: 30px;
 }
 
-.dashboard-icons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.dashboard-icons button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 50px;
-}
-
-.dashboard-icons button:hover {
-  background-color: #f8f8ff;
-  transform: scale(1.10);
-  border: 1px solid black;
+.dashboard-search input[type="search"] {
+  caret-color: var(--color-text);
+  width: 100%;
 }
 
 .dashboard-cards {
@@ -229,21 +246,39 @@ main {
   justify-content: space-between;
 }
 
-/* Container do filtro */
+.dashboard-balance_category {
+  display: flex;
+  gap: 30px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dot-income {
+  background-color: #00b894;
+}
+
+.dot-expense {
+  background-color: #6c5ce7;
+}
+
 .dashboard-balance_filter {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Label */
 .dashboard-balance_filter label {
   font-size: 14px;
   color: #fff;
   font-weight: 500;
 }
 
-/* Select (dropdown) */
 .dashboard-balance_filter select {
   padding: 8px 12px;
   font-size: 14px;
@@ -259,7 +294,6 @@ main {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover e foco do select */
 .dashboard-balance_filter select:hover,
 .dashboard-balance_filter select:focus {
   background-color: #5a4dcf;
@@ -334,14 +368,13 @@ main {
   padding: var(--space-md);
   border-radius: var(--space-md);
 
-  background: #EDE9FE;
+  background: var(--color-card-bg);
   box-shadow: 8px 4px 4px rgb(0, 0, 0);
-  border: 1px solid black;
 }
 
 .account-card p,
 .account-card span {
-  color: #888686;
+  color: var(--color-text-secondary);
 }
 
 .account-card__number {
@@ -509,7 +542,6 @@ main {
   margin-top: 15px;
 }
 
-/* FORM */
 .transaction-form {
   display: flex;
   flex-direction: column;
@@ -546,7 +578,6 @@ main {
   border-color: var(--color-sidebar-btn-hover);
 }
 
-/* BOTÃO */
 .btn-add-transaction {
   margin-top: 12px;
   height: 46px;

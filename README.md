@@ -53,6 +53,7 @@ moneyflow/
 │   ├── reset.css
 │   ├── variables.css
 │   ├── global.css
+│   ├── responsive.css
 │   └── components.css
 │
 ├── scripts/
@@ -68,11 +69,12 @@ moneyflow/
 │   │
 │   ├── utils/
 │   │   ├── formatCurrency.js
+│   │   ├── darkMode.js
+│   │   ├── date.js
 │   │   ├── formatDate.js
 │   │   └── generateId.js
 │   │
 │   └── ui/
-│       ├── aside.js
 │       ├── cards.js
 │       ├── form.js
 │       ├── greeting.js
