@@ -11,11 +11,15 @@ export function hiddenModal() {
   const btnSuporte = document.getElementById("btn-modal-suporte");
   const modalSuporte = document.getElementById("modal-suporte");
 
+  const btnCard = document.getElementById("btn-modal-card");
+  const modalCard = document.getElementById("modal-card");
+
   const pairs = [
     { btn: btnplus, modal: modalplus },
     { btn: btnTrophy, modal: modalTrophy },
     { btn: btnConfig, modal: modalConfig },
     { btn: btnSuporte, modal: modalSuporte },
+    { btn: btnCard, modal: modalCard },
   ];
 
   function toggleModal(targetModal, targetBtn) {
@@ -43,7 +47,7 @@ export function hiddenModal() {
   closeBtns.forEach((closeBtn) => {
     closeBtn.addEventListener("click", () => {
       const currentModal = closeBtn.closest(
-        "#modal-plus, #modal-trophy, #modal-config, #modal-suporte",
+        "#modal-plus, #modal-trophy, #modal-config, #modal-suporte, #modal-card",
       );
       if (!currentModal) return;
 

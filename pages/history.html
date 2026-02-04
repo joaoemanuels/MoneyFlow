@@ -21,53 +21,75 @@
         </div>
 
         <div class="sidebar-item">
-          <a href="/">
+          <div class="tooltip">
+            <a href="/">
+              <button class="menu-item" aria-label="Dashboard">
+                <img src="../assets/icons/home.svg" alt="" />
+              </button>
+            </a>
+            <span class="tooltip-text">Dashboard</span>
+          </div>
+
+          <div class="tooltip">
             <button
+              id="btn-modal-plus"
               class="menu-item"
-              aria-label="Dashboard"
-              aria-current="page"
+              aria-label="Adicionar"
             >
-              <img src="../assets/icons/home.svg" alt="" />
+              <img src="../assets/icons/plus.svg" alt="" />
             </button>
-          </a>
+            <span class="tooltip-text">Adicionar</span>
+          </div>
 
-          <button id="btn-modal-plus" class="menu-item" aria-label="add">
-            <img src="../assets/icons/plus.svg" alt="" />
-          </button>
-
-          <button
-            id="btn-modal-trophy"
-            class="menu-item"
-            aria-label="Conquistas"
-          >
-            <img src="../assets/icons/trophy.svg" alt="" />
-          </button>
-
-          <a href="">
-            <button id="btn-modal-card" class="menu-item" aria-label="Cartões">
-              <img src="../assets/icons/credit-card.svg" alt="" />
+          <div class="tooltip">
+            <button
+              id="btn-modal-trophy"
+              class="menu-item"
+              aria-label="Conquistas"
+            >
+              <img src="../assets/icons/trophy.svg" alt="" />
             </button>
-          </a>
+            <span class="tooltip-text">Conquistas</span>
+          </div>
+
+          <div class="tooltip">
+            <a href="../pages/history.html">
+              <button class="menu-item" aria-label="Cartões">
+                <img src="../assets/icons/credit-card.svg" alt="" />
+              </button>
+            </a>
+            <span class="tooltip-text">Histórico</span>
+          </div>
         </div>
 
         <div class="sidebar-config">
-          <button id="btn-modal-suporte" class="menu-item" aria-label="Suporte">
-            <img src="../assets/icons/support.svg" alt="" />
-          </button>
+          <div class="tooltip">
+            <button
+              id="btn-modal-suporte"
+              class="menu-item"
+              aria-label="Suporte"
+            >
+              <img src="../assets/icons/support.svg" alt="" />
+            </button>
+            <span class="tooltip-text">Suporte</span>
+          </div>
 
-          <button
-            id="btn-modal-config"
-            class="menu-item"
-            aria-label="Configurações"
-          >
-            <img src="../assets/icons/settings.svg" alt="" />
-          </button>
+          <div class="tooltip">
+            <button
+              id="btn-modal-config"
+              class="menu-item"
+              aria-label="Configurações"
+            >
+              <img src="../assets/icons/settings.svg" alt="" />
+            </button>
+            <span class="tooltip-text">Configurações</span>
+          </div>
         </div>
       </nav>
     </aside>
 
     <main>
-      <header class="dashboard-header">
+      <header class="dashboard-header_page">
         <div class="dashboard-title">
           <h1>Dashboard Financeiro</h1>
           <p id="dashboard-greeting"></p>
@@ -85,29 +107,57 @@
             />
 
             <button type="submit" aria-label="Pesquisar">
-              <img src="./assets/icons/search.svg" alt="" />
+              <img src="../assets/icons/search.svg" alt="" />
             </button>
           </form>
-
-          <div class="dashboard-icons">
-            <button class="menu-item" aria-label="calendar">
-              <img src="./assets/icons/calendar.svg" alt="" />
-            </button>
-
-            <button class="menu-item" aria-label="Notificações">
-              <img src="./assets/icons/bell.svg" alt="" />
-            </button>
-          </div>
         </div>
       </header>
 
-      <section class="dashboard-history">
+      <section class="dashboard-cards" style="display: none">
+        <div class="dashboard-card">
+          <p class="dashboard-card__value" id="total-balance"></p>
+          <div class="tooltip">
+            <img src="../assets/icons/wallet.svg" alt="" />
+            <span class="tooltip-text">Saldo atual disponível</span>
+          </div>
+          <span>Saldo disponível</span>
+        </div>
+
+        <div class="dashboard-card">
+          <p class="dashboard-card__value" id="total-income"></p>
+          <div class="tooltip">
+            <img src="../assets/icons/income.svg" alt="" />
+            <span class="tooltip-text">Entradas deste mês</span>
+          </div>
+          <span>Total de Entradas</span>
+        </div>
+
+        <div class="dashboard-card">
+          <p class="dashboard-card__value" id="total-invested"></p>
+          <div class="tooltip">
+            <img src="../assets/icons/finance.svg" alt="" />
+            <span class="tooltip-text">Total aplicado em investimentos</span>
+          </div>
+          <span>Valor investido</span>
+        </div>
+
+        <div class="dashboard-card">
+          <p class="dashboard-card__value" id="total-expense"></p>
+          <div class="tooltip">
+            <img src="../assets/icons/wallet-expense.svg" alt="" />
+            <span class="tooltip-text">Gastos deste mês</span>
+          </div>
+          <span>Gastos totais</span>
+        </div>
+      </section>
+
+      <section class="dashboard-history_page">
         <div class="dashboard-history_title">
           <h2>Histórico de transações</h2>
           <span>Mais recentes</span>
         </div>
 
-        <div class="transactions-history">
+        <div class="transactions-history_page">
           <p id="empty-message">Nenhuma transação</p>
           <ul class="transactions-list"></ul>
         </div>
@@ -124,34 +174,56 @@
       </div>
 
       <section class="account-card">
-        <p class="account-card__number">**** **** **** 1234</p>
+        <div class="account-card_unit">
+          <p class="account-card__number">**** **** **** 1234</p>
 
-        <div class="account-card__content">
-          <div class="account-card__holder">
-            <span>Nome</span>
-            <span>VISA</span>
+          <div class="account-card__content">
+            <div class="account-card__holder">
+              <span>Nome</span>
+              <span>VISA</span>
+            </div>
+            <img src="assets/icons/bell.png" alt="" />
           </div>
-          <img src="../assets/icons/bell.png" alt="" />
+
+          <div class="account-card__meta">
+            <p>Credito</p>
+
+            <div class="account-card__meta__section">
+              <div class="account-card__expiry">
+                <p>Validade</p>
+                <p>01/22</p>
+              </div>
+
+              <div class="account-card__cvv">
+                <p>CVV</p>
+                <p>***</p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="account-card__meta">
-          <p>Credito</p>
-
-          <div class="account-card__meta__section">
-            <div class="account-card__expiry">
-              <p>Validade</p>
-              <p>01/22</p>
-            </div>
-
-            <div class="account-card__cvv">
-              <p>CVV</p>
-              <p>***</p>
-            </div>
-          </div>
+        <div class="account-card_manage">
+          <button type="button">Gerenciar cartão</button>
         </div>
       </section>
 
       <hr />
+      <div class="calendar">
+        <div class="calendar-header">
+          <h2 id="monthYear">Fevereiro 2026</h2>
+        </div>
+
+        <div class="calendar-weekdays">
+          <span>Dom</span>
+          <span>Seg</span>
+          <span>Ter</span>
+          <span>Qua</span>
+          <span>Qui</span>
+          <span>Sex</span>
+          <span>Sáb</span>
+        </div>
+
+        <div class="calendar-days" id="calendarDays"></div>
+      </div>
     </aside>
 
     <!-- Modais -->
@@ -163,7 +235,6 @@
             <button id="closeModalBtn" class="modal-close">X</button>
           </div>
 
-          <!-- NOVA SEÇÃO -->
           <div class="modal-add-body">
             <form class="transaction-form">
               <div class="form-group">
@@ -237,15 +308,7 @@
             <h2>Conquistas</h2>
             <button id="closeModalBtn" class="modal-close">X</button>
           </div>
-          <button class="modal-item">
-            <img src="../assets/icons/settings.png" alt="" />
-            <p>Modo Dark</p>
-          </button>
 
-          <button class="modal-item">
-            <img src="../assets/icons/settings.png" alt="" />
-            <p>Fazer Logout</p>
-          </button>
           <span>Versão 1.0</span>
         </div>
       </div>

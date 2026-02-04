@@ -8,7 +8,8 @@ function initApp() {
   hiddenModal();
   renderSummary();
   renderTransactions();
-  initChart(); 
+  initChart();
+  
 }
 
 document.addEventListener("DOMContentLoaded", initApp);

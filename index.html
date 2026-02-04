@@ -203,34 +203,56 @@
       </div>
 
       <section class="account-card">
-        <p class="account-card__number">**** **** **** 1234</p>
+        <div class="account-card_unit">
+          <p class="account-card__number">**** **** **** 1234</p>
 
-        <div class="account-card__content">
-          <div class="account-card__holder">
-            <span>Nome</span>
-            <span>VISA</span>
+          <div class="account-card__content">
+            <div class="account-card__holder">
+              <span>Nome</span>
+              <span>VISA</span>
+            </div>
+            <img src="assets/icons/bell.png" alt="" />
           </div>
-          <img src="assets/icons/bell.png" alt="" />
+
+          <div class="account-card__meta">
+            <p>Credito</p>
+
+            <div class="account-card__meta__section">
+              <div class="account-card__expiry">
+                <p>Validade</p>
+                <p>01/22</p>
+              </div>
+
+              <div class="account-card__cvv">
+                <p>CVV</p>
+                <p>***</p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="account-card__meta">
-          <p>Credito</p>
-
-          <div class="account-card__meta__section">
-            <div class="account-card__expiry">
-              <p>Validade</p>
-              <p>01/22</p>
-            </div>
-
-            <div class="account-card__cvv">
-              <p>CVV</p>
-              <p>***</p>
-            </div>
-          </div>
+        <div class="account-card_manage">
+          <button id="btn-modal-card" type="button">Gerenciar cartão</button>
         </div>
       </section>
 
       <hr />
+      <div class="calendar">
+        <div class="calendar-header">
+          <h2 id="monthYear">Fevereiro 2026</h2>
+        </div>
+
+        <div class="calendar-weekdays">
+          <span>Dom</span>
+          <span>Seg</span>
+          <span>Ter</span>
+          <span>Qua</span>
+          <span>Qui</span>
+          <span>Sex</span>
+          <span>Sáb</span>
+        </div>
+
+        <div class="calendar-days" id="calendarDays"></div>
+      </div>
     </aside>
 
     <!-- Modais -->
@@ -421,6 +443,80 @@
             <p>Fazer Logout</p>
           </button>
           <span>Versão 1.3.0</span>
+        </div>
+      </div>
+
+      <div id="modal-card" class="modal-add-cards">
+        <div class="modal-add-card">
+          <div class="modal-content-header">
+            <h2>Adicionar transação</h2>
+            <button id="closeModalBtn" class="modal-close">X</button>
+          </div>
+
+          <div class="modal-add-body">
+            <form class="transaction-form">
+              <div class="form-group">
+                <label>Descrição*</label>
+                <input
+                  type="text"
+                  placeholder="Ex: Salário"
+                  name="desc"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Valor*</label>
+                <input
+                  type="number"
+                  placeholder="Ex: 1200"
+                  name="value"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Tipo*</label>
+                <select name="type" required>
+                  <option disabled selected>Selecione</option>
+                  <option value="income">Entrada</option>
+                  <option value="expense">Saída</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="selectAno">Categoria*</label>
+                <select id="selectAno" name="category" required>
+                  <option name="category" disabled selected>Selecione</option>
+                  <option value="Trabalho">Trabalho</option>
+                  <option value="Moradia">Moradia</option>
+                  <option value="Serviços">Serviços</option>
+                  <option value="Lazer">Lazer</option>
+                  <option value="Vendas">Vendas</option>
+                  <option value="Investimentos">Investimentos</option>
+                  <option value="Alimentação">Alimentação</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Assinaturas">Assinaturas</option>
+                  <option value="Saúde">Saúde</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Data*</label>
+                <input
+                  type="date"
+                  name="date"
+                  min="2000-01-01"
+                  max="2040-12-31"
+                  required
+                />
+              </div>
+
+              <button class="btn-add-transaction" type="submit">
+                Adicionar transação
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
