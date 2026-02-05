@@ -2,6 +2,8 @@ import { renderSummary } from "./ui/summary.js";
 import { renderTransactions } from "./ui/table.js";
 import { hiddenModal } from "./ui/modal.js";
 import { initChart } from "./services/chartData.js";
+import { initCardManager } from "./ui/accountCard.js";
+
 import "./utils/darkMode.js";
 
 function initApp() {
@@ -9,7 +11,7 @@ function initApp() {
   renderSummary();
   renderTransactions();
   initChart();
-  
+  initCardManager();
 }
 
 document.addEventListener("DOMContentLoaded", initApp);

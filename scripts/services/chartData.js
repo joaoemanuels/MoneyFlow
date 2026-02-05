@@ -1,8 +1,5 @@
 import { state } from "../data/storage.js";
 
-/* ======================
-   CONFIGURAÇÕES GERAIS
-====================== */
 let canvas, ctx;
 const padding = 50;
 
@@ -13,9 +10,6 @@ const chart = {
   right: 0,
 };
 
-/* ======================
-   MESES
-====================== */
 const months = [
   "Jan",
   "Fev",
@@ -31,14 +25,8 @@ const months = [
   "Dez",
 ];
 
-/* ======================
-   ANO SELECIONADO
-====================== */
 let SELECTED_YEAR = new Date().getFullYear();
 
-/* ======================
-   INICIALIZAÇÃO
-====================== */
 export function initChart() {
   canvas = document.getElementById("finance-chart");
   if (!canvas) return;
@@ -59,9 +47,6 @@ export function initChart() {
   drawChart();
 }
 
-/* ======================
-   FUNÇÃO PRINCIPAL
-====================== */
 export function drawChart() {
   if (!ctx) return;
 
@@ -122,9 +107,6 @@ export function drawChart() {
   drawStackedBars(incomeData, expenseData, gap, maxValue);
 }
 
-/* ======================
-   BARRAS EMPILHADAS
-====================== */
 function drawStackedBars(incomeData, expenseData, gap, maxValue) {
   const chartHeight = chart.bottom - chart.top;
 
@@ -142,14 +124,12 @@ function drawStackedBars(incomeData, expenseData, gap, maxValue) {
     const x = chart.left + gap * index + 10;
     let y = chart.bottom;
 
-    // EXPENSE (roxo) — base
     if (expense > 0) {
       ctx.fillStyle = "#6c5ce7";
       ctx.fillRect(x, y - expenseHeight, gap - 20, expenseHeight);
       y -= expenseHeight;
     }
 
-    // INCOME (verde) — topo
     if (income > 0) {
       ctx.fillStyle = "#00b894";
       ctx.fillRect(x, y - incomeHeight, gap - 20, incomeHeight);

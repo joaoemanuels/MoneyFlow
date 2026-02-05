@@ -204,32 +204,41 @@
 
       <section class="account-card">
         <div class="account-card_unit">
-          <p class="account-card__number">**** **** **** 1234</p>
+          <p
+            class="account-card__number value placeholder"
+            aria-label="Número do cartão"
+          >
+            •••• •••• •••• ••••
+          </p>
 
           <div class="account-card__content">
             <div class="account-card__holder">
-              <span>Nome</span>
-              <span>VISA</span>
+              <span class="label">Titular</span>
+              <span class="value placeholder">••••</span>
             </div>
             <img src="assets/icons/bell.png" alt="" />
           </div>
 
           <div class="account-card__meta">
-            <p>Credito</p>
+            <div class="account-card__brand">
+              <span class="label">Crédito</span>
+              <p class="value"></p>
+            </div>
 
             <div class="account-card__meta__section">
               <div class="account-card__expiry">
-                <p>Validade</p>
-                <p>01/22</p>
+                <p class="label">Validade</p>
+                <p class="value placeholder">••/••</p>
               </div>
 
               <div class="account-card__cvv">
-                <p>CVV</p>
-                <p>***</p>
+                <p class="label">CVV</p>
+                <p class="value placeholder">•••</p>
               </div>
             </div>
           </div>
         </div>
+
         <div class="account-card_manage">
           <button id="btn-modal-card" type="button">Gerenciar cartão</button>
         </div>
@@ -446,75 +455,73 @@
         </div>
       </div>
 
-      <div id="modal-card" class="modal-add-cards">
+      <div id="modal-card" class="modal-add-cards hidden">
         <div class="modal-add-card">
           <div class="modal-content-header">
-            <h2>Adicionar transação</h2>
-            <button id="closeModalBtn" class="modal-close">X</button>
+            <h2>Gerenciar Cartão</h2>
+            <button class="modal-close">X</button>
           </div>
 
           <div class="modal-add-body">
-            <form class="transaction-form">
+            <form class="transaction-form ManageCard-form">
               <div class="form-group">
-                <label>Descrição*</label>
+                <label>Número do cartão</label>
                 <input
                   type="text"
-                  placeholder="Ex: Salário"
-                  name="desc"
-                  required
+                  name="numCard"
+                  placeholder="0000 0000 0000 0000"
+                  inputmode="numeric"
+                  maxlength="19"
                 />
               </div>
 
               <div class="form-group">
-                <label>Valor*</label>
-                <input
-                  type="number"
-                  placeholder="Ex: 1200"
-                  name="value"
-                  required
-                />
+                <label>Nome do titular</label>
+                <input type="text" name="holder" />
               </div>
 
               <div class="form-group">
-                <label>Tipo*</label>
-                <select name="type" required>
-                  <option disabled selected>Selecione</option>
-                  <option value="income">Entrada</option>
-                  <option value="expense">Saída</option>
+                <label>Bandeira do cartão</label>
+                <select name="brand">
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="MasterCard">MasterCard</option>
+                  <option value="Visa">Visa</option>
+                  <option value="Elo">Elo</option>
+                  <option value="Hipercard">Hipercard</option>
+                  <option value="American Express">American Express</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="selectAno">Categoria*</label>
-                <select id="selectAno" name="category" required>
-                  <option name="category" disabled selected>Selecione</option>
-                  <option value="Trabalho">Trabalho</option>
-                  <option value="Moradia">Moradia</option>
-                  <option value="Serviços">Serviços</option>
-                  <option value="Lazer">Lazer</option>
-                  <option value="Vendas">Vendas</option>
-                  <option value="Investimentos">Investimentos</option>
-                  <option value="Alimentação">Alimentação</option>
-                  <option value="Freelance">Freelance</option>
-                  <option value="Assinaturas">Assinaturas</option>
-                  <option value="Saúde">Saúde</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Data*</label>
+                <label>Validade</label>
                 <input
-                  type="date"
-                  name="date"
-                  min="2000-01-01"
-                  max="2040-12-31"
-                  required
+                  type="text"
+                  name="expiry"
+                  placeholder="MM/AA"
+                  inputmode="numeric"
+                  maxlength="5"
                 />
               </div>
 
-              <button class="btn-add-transaction" type="submit">
-                Adicionar transação
-              </button>
+              <div class="form-group">
+                <label>CVV</label>
+                <input
+                  type="text"
+                  name="cvv"
+                  placeholder="123"
+                  maxlength="3"
+                  inputmode="numeric"
+                />
+              </div>
+
+              <div class="btn-add-transactions">
+                <button type="submit" class="btn-add-transaction">
+                  Salvar cartão
+                </button>
+                <button type="submit" class="btn-add-transaction">
+                  Excluir cartão
+                </button>
+              </div>
             </form>
           </div>
         </div>
