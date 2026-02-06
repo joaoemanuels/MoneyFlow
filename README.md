@@ -50,11 +50,14 @@ moneyflow/
 │   └── fonts/
 │
 ├── styles/
-│   ├── reset.css
-│   ├── variables.css
+│   ├── components.css
 │   ├── global.css
+│   ├── reset.css
 │   ├── responsive.css
-│   └── components.css
+│   └── variables.css
+│
+├── pages/
+│   └── history.html
 │
 ├── scripts/
 │   ├── app.js
@@ -68,18 +71,22 @@ moneyflow/
 │   │   └── transactionsService.js
 │   │
 │   ├── utils/
-│   │   ├── formatCurrency.js
 │   │   ├── darkMode.js
 │   │   ├── date.js
+│   │   ├── formatDate.js
+│   │   ├── formatCurrency.js
 │   │   ├── formatDate.js
 │   │   └── generateId.js
 │   │
 │   └── ui/
+│       ├── accountCard.js
+│       ├── calendar.js
 │       ├── cards.js
 │       ├── form.js
 │       ├── greeting.js
 │       ├── modal.js
 │       ├── renderCharts.js
+│       ├── search.js
 │       ├── summary.js
 │       └── table.js
 │
@@ -165,11 +172,8 @@ Cada arquivo cuida de uma parte específica da tela.
 
 ## 🔮 Próximos Passos
 
-- Filtro por período (mês/ano)
-- Gráficos de despesas e receitas
-- Edição de transações
 - Exportação de dados (CSV)
-- Tema escuro
+- Configuração do localStorage
 
 ---
 

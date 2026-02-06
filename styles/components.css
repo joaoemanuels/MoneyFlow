@@ -647,7 +647,8 @@ main {
   gap: 15px;
 }
 
-.btn-add-transaction {
+.btn-add-transaction,
+.btn-delete-transaction {
   margin-top: 12px;
   height: 46px;
   width: 50%;
@@ -664,11 +665,12 @@ main {
   transition: transform 0.2s ease
 }
 
-.btn-add-transaction:nth-child(2) {
+.btn-delete-transaction {
   background-color: rgb(214, 36, 36);
 }
 
-.btn-add-transaction:hover {
+.btn-add-transaction:hover,
+.btn-delete-transaction:hover {
   opacity: 0.9;
   transform: scale(1.04);
 

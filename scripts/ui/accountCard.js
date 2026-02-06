@@ -6,6 +6,7 @@ export function initCardManager() {
   const brandValueEl = document.querySelector(".account-card__brand .value");
   const cvvValueEl = document.querySelector(".account-card__cvv .value");
   const manageBtn = document.getElementById("btn-modal-card");
+  const deleteBtn = document.getElementById("btn-delete-card");
 
   if (
     !form ||
@@ -32,6 +33,11 @@ export function initCardManager() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    if (!isFormValid()) {
+      alert("Preencha todos os campos corretamente.");
+      return;
+    }
+
     card = {
       number: numCardInput.value.trim(),
       holder: holderInput.value.trim(),
@@ -43,6 +49,36 @@ export function initCardManager() {
     updateCardUI(card);
     form.reset();
   });
+
+  if (deleteBtn) {
+    deleteBtn.addEventListener("click", () => {
+      if (!card) {
+        alert("Nenhum cartão para excluir.");
+        return;
+      }
+
+      const confirmDelete = confirm("Deseja realmente excluir o cartão?");
+      if (!confirmDelete) return;
+
+      resetCard();
+    });
+  }
+
+  function isFormValid() {
+    const cardNumber = numCardInput.value.replace(/\D/g, "");
+    const cvv = cvvInput.value.replace(/\D/g, "");
+    const expiry = expiryInput.value.trim();
+    const holder = holderInput.value.trim();
+    const brand = brandInput.value;
+
+    if (cardNumber.length !== 16) return false;
+    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)) return false;
+    if (!/^\d{3}$/.test(cvv)) return false;
+    if (!holder) return false;
+    if (!brand) return false;
+
+    return true;
+  }
 
   function fillFormIfExists() {
     if (!card) return;
@@ -57,14 +93,12 @@ export function initCardManager() {
   function updateCardUI(card) {
     const cleanNumber = card.number.replace(/\D/g, "");
 
-    if (cleanNumber.length === 16) {
-      const lastFour = cleanNumber.slice(-4);
-      cardNumberEl.textContent = `•••• •••• •••• ${lastFour}`;
-      cardNumberEl.classList.remove("placeholder");
-    } else {
-      cardNumberEl.textContent = "•••• •••• •••• ••••";
-      cardNumberEl.classList.add("placeholder");
-    }
+    cardNumberEl.textContent =
+      cleanNumber.length === 16
+        ? `•••• •••• •••• ${cleanNumber.slice(-4)}`
+        : "•••• •••• •••• ••••";
+
+    cardNumberEl.classList.remove("placeholder");
 
     holderValueEl.textContent = card.holder;
     holderValueEl.classList.remove("placeholder");
@@ -77,5 +111,26 @@ export function initCardManager() {
 
     cvvValueEl.textContent = card.cvv;
     cvvValueEl.classList.remove("placeholder");
+  }
+
+  function resetCard() {
+    card = null;
+
+    cardNumberEl.textContent = "•••• •••• •••• ••••";
+    cardNumberEl.classList.add("placeholder");
+
+    holderValueEl.textContent = "••••";
+    holderValueEl.classList.add("placeholder");
+
+    expiryValueEl.textContent = "MM/AA";
+    expiryValueEl.classList.add("placeholder");
+
+    brandValueEl.textContent = "••••";
+    brandValueEl.classList.add("placeholder");
+
+    cvvValueEl.textContent = "•••";
+    cvvValueEl.classList.add("placeholder");
+
+    form.reset();
   }
 }
