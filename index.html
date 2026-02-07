@@ -110,6 +110,9 @@
               <img src="./assets/icons/search.svg" alt="" />
             </button>
           </form>
+          <button class="btn-open-sidebar" aria-label="Abrir painel lateral">
+            <img src="./assets/icons/menu.svg" alt="" />
+          </button>
         </div>
       </header>
 
@@ -200,6 +203,10 @@
         </button>
 
         <h1 id="siderbar-greeting"></h1>
+
+        <button class="btn-close-sidebar" aria-label="Fechar painel lateral">
+          ✕
+        </button>
       </div>
 
       <section class="account-card">
@@ -216,7 +223,7 @@
               <span class="label">Titular</span>
               <span class="value placeholder">••••</span>
             </div>
-            <img src="assets/icons/bell.png" alt="" />
+            <img src="./assets/icons/credit-card.svg" alt="" />
           </div>
 
           <div class="account-card__meta">
@@ -265,7 +272,7 @@
     </aside>
 
     <!-- Modais -->
-    <div>
+    <div class="modais_section">
       <div id="modal-plus" class="modal-add hidden">
         <div class="modal-add-content">
           <div class="modal-content-header">
@@ -332,9 +339,11 @@
                 />
               </div>
 
-              <button class="btn-add-transaction" type="submit">
-                Adicionar transação
-              </button>
+              <div class="btn-save-transaction_content">
+                <button class="btn-save-transaction" type="submit">
+                  Adicionar transação
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -346,6 +355,8 @@
             <h2>Conquistas</h2>
             <button id="closeModalBtn" class="modal-close">X</button>
           </div>
+
+          <div class="modal-content-trophy"></div>
 
           <span>Versão 1.0</span>
         </div>
@@ -518,7 +529,11 @@
                 <button type="submit" class="btn-add-transaction">
                   Salvar cartão
                 </button>
-                <button type="button" id="btn-delete-card" class="btn-delete-transaction">
+                <button
+                  type="button"
+                  id="btn-delete-card"
+                  class="btn-delete-transaction"
+                >
                   Excluir cartão
                 </button>
               </div>

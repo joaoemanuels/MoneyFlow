@@ -13,6 +13,9 @@ export function hiddenModal() {
 
   const btnCard = document.getElementById("btn-modal-card");
   const modalCard = document.getElementById("modal-card");
+  const sidebar = document.querySelector(".sidebar-right");
+  const openBtn = document.querySelector(".btn-open-sidebar");
+  const closeBtn = document.querySelector(".btn-close-sidebar");
 
   const pairs = [
     { btn: btnplus, modal: modalplus },
@@ -58,5 +61,13 @@ export function hiddenModal() {
         }
       });
     });
+  });
+
+  openBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("active");
   });
 }

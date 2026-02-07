@@ -1,16 +1,19 @@
 /* Mobile */
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
+
 
 /* Tablet */
 @media (min-width: 481px) and (max-width: 768px) {
-  main {
-    width: 100%;
-  }
-
   body {
     display: grid;
     grid-template-columns: 102px 1fr;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  main {
+    width: 100%;
   }
 
   .dashboard-search {
@@ -32,6 +35,10 @@
     padding: 5px;
   }
 
+  .dashboard-balance {
+    height: 100%;
+  }
+
   .sidebar {
     height: 100%;
   }
@@ -39,43 +46,39 @@
   .sidebar-right {
     display: none;
   }
-
-  .dashboard-balance {
-    height: fit-content;
-  }
 }
+
 
 /* Tablet L */
 @media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 102px 1fr;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
   main {
     padding: 10px 10px 0 5px;
   }
 
-  .sidebar-right {
-    display: none;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: var(--font-size-md);
   }
 
-  body {
-    display: grid;
-    grid-template-columns: 102px 1fr;
-    height: 100vh;
-  }
-}
-
-/* Laptop */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  main {
-    padding: 10px 10px 0 10px;
+  .dashboard-card {
+    height: 130px;
   }
 
-  body {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    height: 100%;
+  .dashboard-card img {
+    width: 40px;
   }
 
-  .sidebar-right {
-    display: none;
+  .dashboard-card p {
+    font-size: var(--font-size-md);
   }
 
   .dashboard-history {
@@ -83,21 +86,79 @@
   }
 
   .dashboard-balance {
-    height: fit-content;
-    
+    height: 100%;
+  }
+
+  .sidebar-right {
+    display: none;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  body {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: var(--font-size-md);
   }
 
   .dashboard-card {
     height: 130px;
   }
 
-  .sidebar {}
-}
+  .dashboard-card img {
+    width: 40px;
+  }
 
-/* Desktop */
-@media (min-width: 1281px) and (max-width: 1280px) {
-  .sidebar {
+  .dashboard-card p {
+    font-size: var(--font-size-md);
+  }
+
+  .dashboard-history {
+    height: 190px;
+  }
+
+  .dashboard-balance {
     height: 100%;
   }
 
+  .btn-open-sidebar {
+    display: flex;
+  }
+
+  .btn-close-sidebar {
+    display: flex;
+  }
+
+  .sidebar-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform .6s ease;
+    z-index: 1000;
+  }
+
+  .sidebar-right.active {
+    transform: translateX(0);
+  }
+
+}
+
+
+/* Desktop */
+@media (min-width: 1281px) and (max-width: 1480px) {
+  .sidebar {
+    height: 100%;
+  }
 }

@@ -4,7 +4,7 @@ import { hiddenModal } from "./ui/modal.js";
 import { initChart } from "./services/chartData.js";
 import { initCardManager } from "./ui/accountCard.js";
 
-import "./utils/darkMode.js";
+import "./ui/darkMode.js";
 
 function initApp() {
   hiddenModal();

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/components.css" />
     <link rel="stylesheet" href="../styles/responsive.css" />
-    <link rel="icon" href="../assets/icons/Logotipo.png" type="image/png" />
+    <link rel="icon" href=".../assets/icons/Logotipo.png" type="image/png" />
     <title>MoneyFlow</title>
   </head>
   <body>
@@ -53,7 +53,7 @@
           </div>
 
           <div class="tooltip">
-            <a href="../pages/history.html">
+            <a href="./history.html">
               <button class="menu-item" aria-label="Cartões">
                 <img src="../assets/icons/credit-card.svg" alt="" />
               </button>
@@ -110,6 +110,9 @@
               <img src="../assets/icons/search.svg" alt="" />
             </button>
           </form>
+          <button class="btn-open-sidebar" aria-label="Abrir painel lateral">
+            <img src="../assets/icons/menu.svg" alt="" />
+          </button>
         </div>
       </header>
 
@@ -117,7 +120,7 @@
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-balance"></p>
           <div class="tooltip">
-            <img src="../assets/icons/wallet.svg" alt="" />
+            <img src="assets/icons/wallet.svg" alt="" />
             <span class="tooltip-text">Saldo atual disponível</span>
           </div>
           <span>Saldo disponível</span>
@@ -126,7 +129,7 @@
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-income"></p>
           <div class="tooltip">
-            <img src="../assets/icons/income.svg" alt="" />
+            <img src="assets/icons/income.svg" alt="" />
             <span class="tooltip-text">Entradas deste mês</span>
           </div>
           <span>Total de Entradas</span>
@@ -135,7 +138,7 @@
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-invested"></p>
           <div class="tooltip">
-            <img src="../assets/icons/finance.svg" alt="" />
+            <img src="assets/icons/finance.svg" alt="" />
             <span class="tooltip-text">Total aplicado em investimentos</span>
           </div>
           <span>Valor investido</span>
@@ -144,7 +147,7 @@
         <div class="dashboard-card">
           <p class="dashboard-card__value" id="total-expense"></p>
           <div class="tooltip">
-            <img src="../assets/icons/wallet-expense.svg" alt="" />
+            <img src="assets/icons/wallet-expense.svg" alt="" />
             <span class="tooltip-text">Gastos deste mês</span>
           </div>
           <span>Gastos totais</span>
@@ -157,7 +160,7 @@
           <span>Mais recentes</span>
         </div>
 
-        <div class="transactions-history_page">
+        <div class="transactions-history">
           <p id="empty-message">Nenhuma transação</p>
           <ul class="transactions-list"></ul>
         </div>
@@ -171,6 +174,10 @@
         </button>
 
         <h1 id="siderbar-greeting"></h1>
+
+        <button class="btn-close-sidebar" aria-label="Fechar painel lateral">
+          ✕
+        </button>
       </div>
 
       <section class="account-card">
@@ -178,19 +185,23 @@
           <p
             class="account-card__number value placeholder"
             aria-label="Número do cartão"
-          ></p>
-          •••• •••• •••• ••••
+          >
+            •••• •••• •••• ••••
+          </p>
 
           <div class="account-card__content">
             <div class="account-card__holder">
-              <span class="label">••••</span>
+              <span class="label">Titular</span>
               <span class="value placeholder">••••</span>
             </div>
-            <img src="assets/icons/bell.png" alt="" />
+            <img src="../assets/icons/credit-card.svg" alt="" />
           </div>
 
           <div class="account-card__meta">
-            <p class="account-card__type">Credito</p>
+            <div class="account-card__brand">
+              <span class="label">Crédito</span>
+              <p class="value"></p>
+            </div>
 
             <div class="account-card__meta__section">
               <div class="account-card__expiry">
@@ -205,6 +216,7 @@
             </div>
           </div>
         </div>
+
         <div class="account-card_manage">
           <button id="btn-modal-card" type="button">Gerenciar cartão</button>
         </div>
@@ -425,7 +437,7 @@
         <div class="modal-add-card">
           <div class="modal-content-header">
             <h2>Gerenciar Cartão</h2>
-            <button id="closeModalBtn" class="modal-close">X</button>
+            <button class="modal-close">X</button>
           </div>
 
           <div class="modal-add-body">
@@ -434,36 +446,38 @@
                 <label>Número do cartão</label>
                 <input
                   type="text"
-                  placeholder="Ex: 0000-0000-0000-0000"
                   name="numCard"
-                  required
+                  placeholder="0000 0000 0000 0000"
+                  inputmode="numeric"
+                  maxlength="19"
                 />
               </div>
 
               <div class="form-group">
                 <label>Nome do titular</label>
-                <input type="text" placeholder="Ex: Usuário" name="value" />
+                <input type="text" name="holder" />
               </div>
 
               <div class="form-group">
                 <label>Bandeira do cartão</label>
-                <select name="type">
-                  <option disabled selected>Selecione</option>
-                  <option value="income">MasterCard</option>
-                  <option value="expense">Visa</option>
-                  <option value="expense">Elo</option>
-                  <option value="expense">Hipercard</option>
-                  <option value="expense">American Express</option>
+                <select name="brand">
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="MasterCard">MasterCard</option>
+                  <option value="Visa">Visa</option>
+                  <option value="Elo">Elo</option>
+                  <option value="Hipercard">Hipercard</option>
+                  <option value="American Express">American Express</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label>Validade do cartão</label>
+                <label>Validade</label>
                 <input
                   type="text"
-                  placeholder="Ex: 00/00"
-                  name="value"
-                  required
+                  name="expiry"
+                  placeholder="MM/AA"
+                  inputmode="numeric"
+                  maxlength="5"
                 />
               </div>
 
@@ -471,15 +485,25 @@
                 <label>CVV</label>
                 <input
                   type="text"
-                  placeholder="Ex: 000"
-                  name="value"
-                  required
+                  name="cvv"
+                  placeholder="123"
+                  maxlength="3"
+                  inputmode="numeric"
                 />
               </div>
 
-              <button class="btn-add-transaction" type="submit">
-                Atualizar Cartão
-              </button>
+              <div class="btn-add-transactions">
+                <button type="submit" class="btn-add-transaction">
+                  Salvar cartão
+                </button>
+                <button
+                  type="button"
+                  id="btn-delete-card"
+                  class="btn-delete-transaction"
+                >
+                  Excluir cartão
+                </button>
+              </div>
             </form>
           </div>
         </div>

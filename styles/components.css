@@ -1,7 +1,7 @@
 body {
   display: grid;
   grid-template-columns: 80px 1fr 20%;
-  height: 100%;
+  height: fit-content;
 }
 
 main {
@@ -107,6 +107,12 @@ main {
   align-items: center;
 }
 
+.dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .dashboard-search {
   display: flex;
   flex-direction: row-reverse;
@@ -114,7 +120,7 @@ main {
   justify-content: left;
   gap: var(--space-sm);
 
-  width: 400px;
+  width: 300px;
   height: 40px;
   padding: 0 var(--space-lg);
 
@@ -133,12 +139,19 @@ main {
   color: var(--color-text);
 }
 
+.btn-open-sidebar {
+  width: 60px;
+  display: none;
+}
+
 .dashboard-cards {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: var(--space-md) 0;
   gap: var(--space-md);
+  width: 95%;
+  margin: var(--space-sm) auto;
+
 }
 
 .dashboard-card {
@@ -362,6 +375,31 @@ main {
   transform: scale(1.15);
 }
 
+.btn-close-sidebar {
+  font-size: 30px;
+}
+
+.btn-close-sidebar {
+  display: none;
+  align-items: end;
+  justify-content: flex-end;
+
+  width: fit-content;
+  padding: var(--space-xs) var(--space-xs);
+  border-radius: var(--radius-md);
+  background-color: var(--color-secundary);
+
+  color: white;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.btn-close-sidebar:hover {
+  background-color: var(--color-sidebar-btn-hover);
+  color: black;
+}
+
 /* ======================================================
    ACCOUNT CARD
 ====================================================== */
@@ -414,6 +452,10 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: var(--space-md) 0;
+}
+
+.account-card__content img {
+  width: 40px;
 }
 
 .account-card__holder {
@@ -494,6 +536,11 @@ main {
 /* =====================
    MODAL
 ===================== */
+
+.modais_section {
+  height: 0;
+}
+
 .modal {
   position: absolute;
   bottom: 0;
@@ -641,6 +688,11 @@ main {
   border-color: var(--color-sidebar-btn-hover);
 }
 
+.btn-save-transaction_content {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-add-transactions {
   display: flex;
   justify-content: space-between;
@@ -648,7 +700,8 @@ main {
 }
 
 .btn-add-transaction,
-.btn-delete-transaction {
+.btn-delete-transaction,
+.btn-save-transaction {
   margin-top: 12px;
   height: 46px;
   width: 50%;
@@ -670,7 +723,8 @@ main {
 }
 
 .btn-add-transaction:hover,
-.btn-delete-transaction:hover {
+.btn-delete-transaction:hover,
+.btn-save-transaction:hover {
   opacity: 0.9;
   transform: scale(1.04);
 
