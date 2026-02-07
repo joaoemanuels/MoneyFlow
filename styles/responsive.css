@@ -1,5 +1,13 @@
 /* Mobile */
 @media (max-width: 480px) {
+  body {
+    grid-template-columns: 80px 1fr;
+  }
+
+  main {
+    width: fit-content;
+    height: auto;
+  }
 
   h1,
   h2,
@@ -25,10 +33,15 @@
   .dashboard-history {
     gap: 0;
     padding: 5px;
+    height: 300px;
   }
 
   .dashboard-balance {
     height: 100%;
+  }
+
+  #finance-chart {
+    height: 150px;
   }
 
   .sidebar {
@@ -47,7 +60,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 45%;
+    width: 55%;
     height: 100vh;
     transform: translateX(100%);
     transition: transform .6s ease;
@@ -57,11 +70,20 @@
   .sidebar-right.active {
     transform: translateX(0);
   }
+
 }
 
 
 /* Tablet */
 @media (min-width: 481px) and (max-width: 768px) {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: var(--font-size-sm);
+  }
+
   body {
     display: grid;
     grid-template-columns: 102px 1fr;
@@ -84,7 +106,11 @@
 
   .dashboard-card {
     flex: 1 1 calc(50% - var(--space-md));
-    height: 150px;
+    height: 120px;
+  }
+
+  .dashboard-card img {
+    width: 40px;
   }
 
   .dashboard-history {
@@ -93,7 +119,11 @@
   }
 
   .dashboard-balance {
-    height: 100%;
+    height: max-content;
+  }
+
+  #finance-chart {
+    height: 200px;
   }
 
   .sidebar {
@@ -134,6 +164,10 @@
     overflow-x: hidden;
   }
 
+  main {
+    min-height: 100vh;
+  }
+
 
   h1,
   h2,
@@ -143,7 +177,7 @@
   }
 
   .dashboard-card {
-    height: 130px;
+    height: 160px;
   }
 
   .dashboard-card img {
@@ -155,11 +189,15 @@
   }
 
   .dashboard-history {
-    height: 190px;
+    height: 350px;
   }
 
   .dashboard-balance {
     height: 100%;
+  }
+
+  #finance-chart {
+    height: 300px;
   }
 
   .btn-open-sidebar {
@@ -251,8 +289,11 @@
 
 /* Desktop */
 @media (min-width: 1281px) and (max-width: 1480px) {
-  .sidebar {
-    height: 100%;
+  main {
+    min-height: 100vh;
   }
 
+  .dashboard-history {
+    height: 350px;
+  }
 }
