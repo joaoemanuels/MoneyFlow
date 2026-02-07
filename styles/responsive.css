@@ -1,5 +1,62 @@
 /* Mobile */
 @media (max-width: 480px) {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: var(--font-size-sm);
+  }
+
+  .dashboard-search {
+    width: 100%;
+  }
+
+  .dashboard-cards {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .dashboard-card {
+    flex: 1 1 calc(50% - var(--space-md));
+    height: 150px;
+  }
+
+  .dashboard-history {
+    gap: 0;
+    padding: 5px;
+  }
+
+  .dashboard-balance {
+    height: 100%;
+  }
+
+  .sidebar {
+    height: 100%;
+  }
+
+  .btn-open-sidebar {
+    display: flex;
+  }
+
+  .btn-close-sidebar {
+    display: flex;
+  }
+
+  .sidebar-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform .6s ease;
+    z-index: 1000;
+  }
+
+  .sidebar-right.active {
+    transform: translateX(0);
+  }
 }
 
 
@@ -43,8 +100,27 @@
     height: 100%;
   }
 
+  .btn-open-sidebar {
+    display: flex;
+  }
+
+  .btn-close-sidebar {
+    display: flex;
+  }
+
   .sidebar-right {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform .6s ease;
+    z-index: 1000;
+  }
+
+  .sidebar-right.active {
+    transform: translateX(0);
   }
 }
 
@@ -53,14 +129,11 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   body {
     display: grid;
-    grid-template-columns: 102px 1fr;
+    grid-template-columns: 80px 1fr;
     min-height: 100vh;
     overflow-x: hidden;
   }
 
-  main {
-    padding: 10px 10px 0 5px;
-  }
 
   h1,
   h2,
@@ -89,9 +162,29 @@
     height: 100%;
   }
 
-  .sidebar-right {
-    display: none;
+  .btn-open-sidebar {
+    display: flex;
   }
+
+  .btn-close-sidebar {
+    display: flex;
+  }
+
+  .sidebar-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform .6s ease;
+    z-index: 1000;
+  }
+
+  .sidebar-right.active {
+    transform: translateX(0);
+  }
+
 }
 
 /* Laptop */
@@ -161,4 +254,5 @@
   .sidebar {
     height: 100%;
   }
+
 }
