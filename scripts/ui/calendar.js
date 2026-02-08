@@ -34,10 +34,10 @@ for (let i = 0; i < firstDay; i++) {
 for (let day = 1; day <= totalDays; day++) {
   const span = document.createElement("span");
 
-  if (today === day){
+  if (today === day) {
     span.classList.add("active");
   }
-    
-    span.textContent = day;
+
+  span.textContent = day;
   calendarDays.appendChild(span);
 }

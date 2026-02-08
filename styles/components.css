@@ -4,16 +4,6 @@ body {
   height: fit-content;
 }
 
-main {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  padding: 10px 15px 0 15px;
-}
-
-/* ======================================================
-   SIDEBAR ESQUERDA
-====================================================== */
 .sidebar {
   width: 80px;
   height: 100%;
@@ -98,6 +88,13 @@ main {
 
 }
 
+main {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 10px 15px 0 15px;
+}
+
 /* ======================================================
    DASHBOARD — TOPO
 ====================================================== */
@@ -149,7 +146,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-md);
-  width: 95%;
+  width: 100%;
   margin: var(--space-sm) auto;
 
 }
@@ -946,7 +943,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  height: 90vh;
+  height: fit-content;
+  overflow-y: hidden;
   padding: var(--space-md);
   padding-bottom: 0;
   border-radius: var(--radius-md);
