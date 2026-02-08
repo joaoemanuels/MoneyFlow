@@ -120,8 +120,6 @@ Responsável por:
 
 ### `data/storage.js`
 
-Camada responsável exclusivamente pela comunicação com o `localStorage`.
-
 Funções:
 
 - Salvar dados
