@@ -30,6 +30,11 @@
     height: 150px;
   }
 
+  .dashboard-card p {
+    font-size: 1px;
+    border: 1px solid red;
+  }
+
   .dashboard-history {
     gap: 0;
     padding: 5px;
@@ -91,8 +96,22 @@
     overflow-x: hidden;
   }
 
+  .transactions-history img {
+    width: 30px;
+  }
+
+  .transactions-history span {
+    font-size: 13px;
+  }
+
+  .transaction-item {
+    gap: 1px;
+  }
+
   main {
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .dashboard-search {
@@ -106,11 +125,19 @@
 
   .dashboard-card {
     flex: 1 1 calc(50% - var(--space-md));
-    height: 120px;
+    height: 100px;
+  }
+
+  .dashboard-card p {
+    font-size: var(--font-size-sm);
+  }
+
+  .dashboard-card span {
+    font-size: 12px;
   }
 
   .dashboard-card img {
-    width: 40px;
+    width: 30px;
   }
 
   .dashboard-history {
@@ -188,17 +215,11 @@
     font-size: var(--font-size-md);
   }
 
-  .dashboard-history {
-    height: 350px;
-  }
 
   .dashboard-balance {
     height: 100%;
   }
 
-  #finance-chart {
-    height: 300px;
-  }
 
   .btn-open-sidebar {
     display: flex;
@@ -293,7 +314,5 @@
     min-height: 100vh;
   }
 
-  .dashboard-history {
-    height: 350px;
-  }
+
 }
