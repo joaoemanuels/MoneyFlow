@@ -1,6 +1,6 @@
 # MoneyFlow
 
-**MoneyFlow** é um dashboard de controle financeiro pessoal desenvolvido em **JavaScript puro (Vanilla JS)**. O objetivo do projeto é permitir que o usuário registre receitas e despesas, visualize o saldo e acompanhe sua vida financeira de forma simples, clara e organizada.
+**MoneyFlow** é um dashboard de controle financeiro pessoal desenvolvido em **JavaScript (Vanilla JS)**. O objetivo do projeto é permitir que o usuário registre receitas e despesas, visualize o saldo e acompanhe sua vida financeira de forma simples, clara e organizada.
 
 Este projeto foi criado com foco em **boas práticas de organização de código**, **separação de responsabilidades** e **escala**, mesmo sem o uso de frameworks.
 
@@ -9,14 +9,11 @@ Este projeto foi criado com foco em **boas práticas de organização de código
 ## Funcionalidades
 
 - Adicionar receitas e despesas
-- Remover transações
 - Listagem completa de movimentações
 - Cálculo automático de:
   - Total de receitas
   - Total de despesas
   - Saldo final
-
-- Persistência de dados com `localStorage`
 - Dados mockados para testes
 - Interface simples e responsiva
 
@@ -140,7 +137,6 @@ Contém as regras de negócio da aplicação.
 Exemplos:
 
 - Adicionar transação
-- Remover transação
 - Calcular saldo
 - Aplicar filtros
 
@@ -170,14 +166,8 @@ Cada arquivo cuida de uma parte específica da tela.
 
 ---
 
-## Próximos Passos
-
-- Exportação de dados (CSV)
-- Configuração do localStorage
-
----
-
 ## Autor
 
 Desenvolvido por **João Emanuel**
-Projeto criado para portfólio com foco em JavaScript puro e boas práticas de front-end.
+
+Projeto criado para portfólio com foco em JavaScript e boas práticas de front-end.
